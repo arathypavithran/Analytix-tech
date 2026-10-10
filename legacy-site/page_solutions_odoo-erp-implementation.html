@@ -1,0 +1,1896 @@
+
+<!doctype html>
+<html lang="en-US" >
+<head>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Odoo ERP Implementation &#8211; Analytix</title>
+<meta name='robots' content='noindex, nofollow' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Analytix &raquo; Feed" href="https://analytixbss.com/technew/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Analytix &raquo; Comments Feed" href="https://analytixbss.com/technew/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://analytixbss.com/technew/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fanalytixbss.com%2Ftechnew%2Fsolutions%2Fodoo-erp-implementation%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://analytixbss.com/technew/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fanalytixbss.com%2Ftechnew%2Fsolutions%2Fodoo-erp-implementation%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-icon svg){width: 24px;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://analytixbss.com/technew/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.5' media='all' />
+<link rel='stylesheet' id='elementhelper-main-css' href='https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/css/elh-element.css?ver=1.0.3' media='all' />
+<link rel='stylesheet' id='avista-fonts-css' href='https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&#038;family=Geist+Mono:wght@100..900&#038;family=Mona+Sans:ital,wght@0,200..900;1,200..900&#038;display=swap' media='all' />
+<link rel='stylesheet' id='animate-min-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/animate-min.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='bootstrap-min-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/bootstrap.min.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/magnific-popup.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='nice-select-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/nice-select.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='swiper-min-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/swiper.min.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='fontawesome-min-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/fontawesome-min.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='odometer-min.css-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/odometer.min.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='avista-core-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/avista-core.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='avista-companion-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/avista-companion.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='avista-extra-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/avista-extra.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='avista-custom-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/avista-custom.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='avista-style-css' href='https://analytixbss.com/technew/wp-content/themes/avista/style.css?ver=7.0.6' media='all' />
+<link rel='stylesheet' id='avista-primary-color-css' href='https://analytixbss.com/technew/wp-content/themes/avista/assets/css/avista-custom.css?ver=7.0.6' media='all' />
+<style id="avista-primary-color-inline-css">
+
+            :root {
+                --as-clr-pr-1: #52257c;
+                --as-clr-pr-3: #52257c;
+            }
+        
+
+            ::-webkit-scrollbar-thumb {
+                background-color: #fd3f00;
+            }
+        
+/*# sourceURL=avista-primary-color-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-icons-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.47.0' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='elementor-post-7-css' href='https://analytixbss.com/technew/wp-content/uploads/elementor/css/post-7.css?ver=1791056486' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='widget-image-box-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-image-box.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='widget-nested-tabs-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-nested-tabs.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='elementor-post-1724-css' href='https://analytixbss.com/technew/wp-content/uploads/elementor/css/post-1724.css?ver=1791190638' media='all' />
+<link rel='stylesheet' id='elementor-gf-inter-css' href='https://fonts.googleapis.com/css?family=Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<link rel='stylesheet' id='elementor-gf-roboto-css' href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;display=swap' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-2-css' href='https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/css/flaticon-avista.css?ver=1.0.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-element-helper-flaticon-css' href='https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/css/flaticon-avista.css?ver=1.0.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-1-css' href='https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/css/font-awesome.min.css?ver=1.0.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-element-helper-icons-css' href='https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/css/font-awesome.min.css?ver=1.0.3' media='all' />
+<script id="jquery-core-js" src="https://analytixbss.com/technew/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://analytixbss.com/technew/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://analytixbss.com/technew/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://analytixbss.com/technew/wp-json/wp/v2/pages/1724" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://analytixbss.com/technew/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.0.6" />
+<link rel="canonical" href="https://analytixbss.com/technew/solutions/odoo-erp-implementation/" />
+<link rel='shortlink' href='https://analytixbss.com/technew/?p=1724' />
+<meta name="generator" content="Elementor 3.35.8; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<style type="text/css">.tx-header .tx-logo img{max-width:142px;}</style><style id="wp-custom-css">
+/* Service pages testimonial section design */
+
+.as-testimonial-2-area {
+    overflow: hidden !important;
+}
+/* .as-testimonial-2-item.as_t2_item3.tx-testimonial-item {transform: none !important;} */
+
+
+/* banner sliders */
+.as-hero-3-img-1 {
+    clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+}
+
+.as-hero-3-img-2 {
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 30% 100%);
+} 
+/* --- */
+
+
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+/* Apply Inter to everything EXCEPT icons */
+*:not(i):not(svg):not(path):not(.fa):not(.fas):not(.far):not(.fab):not(.fal):not(.fad):not(.eicons):not([class*="icon"]) {
+    font-family: 'Inter', sans-serif !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
+    font-family: 'Inter', sans-serif;
+}
+
+.as-header-3-area {
+    top: 0px !important;
+}
+.as-main-navigation:is(.as-header-3-menu) .navbar-nav li .dropdown-menu {
+    bottom: unset !important;
+}
+
+
+
+ul.bread-crumb {
+    justify-content: left;
+}
+
+/* .as-about-3-area {  
+    background-color: #dcdcdc26;
+} */
+/* .as-hero-3-height {
+    background-color:#dcdcdc26;
+} */
+
+.as-process-2-item .number {
+    background: #1c2650;
+}
+
+.header3 .as-header-3-logo {
+    background: none !important;
+}
+
+.as-cta-1-social {
+	display : none;
+}
+
+/* @media (min-width: 1200px) and (max-width: 1500px) { */
+	
+.as-services-4-item-list {
+    display: flex !important;
+    flex-direction: row !important;
+   
+}
+
+.as-services-4-left {
+    padding: 241px 0;
+}	
+/* } */
+
+/* faq background colour  */
+.as-faqs-2-accordion .as-accordion-item:is(.active) {
+	  background: rgb(18, 25, 38) url(https://cdn.oreillystatic.com/oreilly/images/hero-events-bg-20240611.svg) center no-repeat;
+}
+
+p.as-p-1.plan-disc.tx-pricing-description {
+padding-bottom: 20px;
+}
+h4.as-h-1.plan-price.tx-pricing-price {
+    display: none;
+}
+
+.as-price-1-card:hover .plan-list li::after {
+    background-color: #ffffff;
+}
+
+.as-about-4-marquee-content {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.wa-offcanvas-top-logo {
+  display: none !important;
+}
+
+/*  Blog comment form*/
+form#commentform {
+    display: none;
+}
+h3.fti-heading-3.blog-details-form-title.mt-0 {
+    display: none;
+}
+.as-about-4-growth .img-elm img {
+    opacity: 0.4;
+}
+/* contact form label */
+.service-label {
+    color: #919191;
+    padding-left: 15px;
+    font-size: 16px;
+    display: block; /* keeps it properly above the field */
+    margin-bottom: 5px; /* optional spacing */
+}
+select#service-contact {
+color: #ffffff9e;
+}
+
+#service-contact {
+    background: transparent;
+    color: #fff; /* selected text */
+  
+}
+#service-contact option {
+    color: #000; /* dropdown text */
+}
+.half-row {
+    display: flex;
+    gap: 15px;
+}
+
+.half-row .wpcf7-form-control-wrap {
+    width: 50%;
+}
+
+.half-row input {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .half-row {
+        flex-direction: column;
+    }
+
+    .half-row .wpcf7-form-control-wrap {
+        width: 100%;
+    }
+}
+
+/* contact form label end */
+</style>
+</head>
+
+<body class="wp-singular page-template page-template-elementor_header_footer page page-id-1724 page-child parent-pageid-2198 wp-embed-responsive wp-theme-avista no-sidebar elementor-default elementor-template-full-width elementor-kit-7 elementor-page elementor-page-1724">
+
+<div class="page-wrapper">
+
+    <!-- preloader start -->
+        <!-- preloader end -->
+
+    <!-- back-to-top-button-start -->
+        <div class="wa-back-to-top wa_backToTop">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+        <!-- back-to-top-button-end -->
+
+    <!-- header start -->
+    											<div data-elementor-type="wp-post" data-elementor-id="305" class="elementor elementor-305" data-elementor-post-type="tf-header">
+				<div class="elementor-element elementor-element-1c910d8 e-con-full e-flex e-con e-parent" data-id="1c910d8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-a98b99b header3 elementor-widget elementor-widget-tx_headers elh-el tx_headers" data-id="a98b99b" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_2&quot;}" data-widget_type="tx_headers.default">
+				<div class="elementor-widget-container">
+					<header class="as-header-3-area tx-header ">
+    <div class="container as-container-1 text-center">
+        <div class="as-header-3-wrap">
+                        <a href="https://analytixbss.com/technew/"
+            aria-label="tech-logo"
+            aria-label="logo" class="as-header-3-logo">
+                <img src="https://analytixbss.com/technew/wp-content/uploads/2025/11/tech-logo-1.png" class="tx-logo"
+                alt="tech-logo">
+            </a>
+            
+            <!-- menu -->
+            <nav class="as-main-navigation as-header-3-menu  d-none d-xl-block">
+                <div class="menu-main-menu-container"><ul id="main-nav" class="nav navbar-nav"><li id="menu-item-2015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2015"><a href="https://analytixbss.com/technew/">Home</a></li>
+<li id="menu-item-1473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1473"><a href="https://analytixbss.com/technew/about-us/">About Us</a></li>
+<li id="menu-item-1796" class="menu-item menu-item-type-custom menu-item-object-custom dropdown menu-item-1796"><a href="#">Service</a>
+<ul class="dropdown-menu clearfix lenis lenis-smooth">
+	<li id="menu-item-2005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2005"><a href="https://analytixbss.com/technew/our-services/design/">Design </a></li>
+	<li id="menu-item-2004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2004"><a href="https://analytixbss.com/technew/our-services/development/">Development </a></li>
+	<li id="menu-item-2003" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2003"><a href="https://analytixbss.com/technew/our-services/marketing/">Marketing</a></li>
+</ul>
+</li>
+<li id="menu-item-1648" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent dropdown menu-item-1648"><a href="#">Solutions</a>
+<ul class="dropdown-menu clearfix lenis lenis-smooth">
+	<li id="menu-item-1795" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1724 current_page_item menu-item-1795"><a href="https://analytixbss.com/technew/solutions/odoo-erp-implementation/" aria-current="page">Odoo ERP Implementation</a></li>
+	<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="https://analytixbss.com/technew/solutions/ai-process-automation/">AI Process Automation</a></li>
+	<li id="menu-item-1810" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1810"><a href="https://analytixbss.com/technew/solutions/aramco-cybersecurity-compliance/">Aramco Cybersecurity Compliance</a></li>
+</ul>
+</li>
+<li id="menu-item-1797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1797"><a href="https://analytixbss.com/technew/blog/">Blog</a></li>
+</ul></div>            </nav>
+
+            <!-- action-link -->
+            <div class="as-header-3-action-link">
+
+                <!-- pr-btn -->
+                                <a href="https://analytixbss.com/technew/contact-us/"
+                target="_self"
+                rel=""
+                aria-label="Contact Us" class="as-pr-btn-3 tx-button">
+                    <span class="text"
+                        data-back="Contact Us"
+                        data-front="Contact Us">
+                    </span>
+                                    </a>
+                
+                <!-- offcanvas-btn -->
+                <button type="button" aria-label="name" class="sr-offcanvas-btn-1 offcanvas_toggle d-xl-none d-inline-block">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="wa-offcanvas-area offcanvas_box_active lenis lenis-smooth ">
+    <div class="wa-offcanvas-wrap ">
+        <!-- top -->
+        <div class="wa-offcanvas-top">
+                        <a href="https://analytixbss.com/technew/" class="tx-logo wa-offcanvas-top-logo" aria-label="Site Logo"  >
+                <img src="https://analytixbss.com/technew/wp-content/uploads/2025/11/tech-logo-1.png" alt="tech-logo">
+            </a>
+            
+            <!-- close-btn -->
+            <button class="wa-offcanvas-close offcanvas_box_close" aria-label="name">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- mobile-menu-list -->
+                <nav class="mobile-main-navigation mb-50 d-block d-lg-block">
+            <div class="menu-main-menu-container"><ul id="m-main-nav" class="nav navbar-nav clearfix list-unstyled"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2015"><a href="https://analytixbss.com/technew/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1473"><a href="https://analytixbss.com/technew/about-us/">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom dropdown menu-item-1796"><a href="#">Service</a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2005"><a href="https://analytixbss.com/technew/our-services/design/">Design </a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2004"><a href="https://analytixbss.com/technew/our-services/development/">Development </a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2003"><a href="https://analytixbss.com/technew/our-services/marketing/">Marketing</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent dropdown menu-item-1648"><a href="#">Solutions</a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1724 current_page_item menu-item-1795"><a href="https://analytixbss.com/technew/solutions/odoo-erp-implementation/" aria-current="page">Odoo ERP Implementation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="https://analytixbss.com/technew/solutions/ai-process-automation/">AI Process Automation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1810"><a href="https://analytixbss.com/technew/solutions/aramco-cybersecurity-compliance/">Aramco Cybersecurity Compliance</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1797"><a href="https://analytixbss.com/technew/blog/">Blog</a></li>
+</ul></div>        </nav>
+        
+        
+        <!-- social -->
+            </div>
+</div>
+				</div>
+				</div>
+				</div>
+				</div>
+						    <!-- header end -->
+
+    <div class="wa-overly"></div>
+
+    <!-- wrapper-box start -->
+    		<div data-elementor-type="wp-page" data-elementor-id="1724" class="elementor elementor-1724" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-8110905 e-con-full service-banner e-flex e-con e-parent" data-id="8110905" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5e44bdc elementor-widget elementor-widget-tx_hero_section elh-el tx_hero_section" data-id="5e44bdc" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_1&quot;}" data-widget_type="tx_hero_section.default">
+				<div class="elementor-widget-container">
+					<section class="as-hero-1-area  wa-fix wa-p-relative wa_tilt " data-heroImgUrl="https://analytixbss.com/technew/wp-content/uploads/2025/10/h1-bg-noise-1.gif">
+    <div class="as-hero-1-bg-color tx-section"></div>
+    <!-- Noise Canvas Overlay -->
+    <canvas id="wa_cursor_noise"></canvas>
+
+    <div class="as-hero-1-active">
+                <p class="as-h-1 active-text tx-subTitle">
+                                </p>
+                    </div>
+
+    <div class="container as-container-1">
+        <div class="as-hero-1-wrap">
+            <!-- left-content -->
+            <div class="as-hero-1-left">
+
+                <!-- marquee-text -->
+                                <div class="as-hero-1-marquee">
+                    <div class="as-hero-1-marquee-wrap wa_marquee_down_top">
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            Design <span>*</span>                        </p>
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            Development <span>*</span>                        </p>
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            Marketing <span>*</span>                        </p>
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            Odoo ERP Implementation <span>*</span>                        </p>
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            AI Process Automation  <span>*</span>                        </p>
+                                                <p class="as-p-1 text-elm tx-movingText">
+                            Aramco Cybersecurity Compliance  <span>*</span>                        </p>
+                                            </div>
+                </div>
+                
+                <!-- copyright-text -->
+                <div class="as-hero-1-copyright-bg">
+                                                            <div class="as-hero-1-copyright-bg-shape" data-background="https://analytixbss.com/technew/wp-content/uploads/2025/10/h1-bg-noise-1.gif"></div>
+                                    </div>
+
+            </div>
+
+            <!-- right-content -->
+            <div class="as-hero-1-right">
+
+                <div class="as-hero-1-content">
+                                        <p class="as-p-1 hero-disc wa_title_split_2 tx-description" data-delay="1.5">
+                        From consulting to go-live in 6-8 weeks. We implement, customise, migrate, and support Odoo for your industry.                     </p>
+                    
+                    <h2 class="tx-title as-h-1 hero-title wa_title_spilt_1"></h2>
+                    <div class="as-hero-1-content-inner">
+
+                        <!-- box-content -->
+                                                <div class="as-hero-1-content-box wow zoomIn" data-wow-delay=".5s">
+                                                        <h5 class="as-h-1 box-title tx-shortDescription">
+                                All Your Operations.One Platform. 
+
+Odoo ERP Implementation                             </h5>
+                            
+                            <!-- pr-btn -->
+                                                        <a href="https://analytixbss.com/technew/contact-us/"
+                            target="_self"
+                            rel=""
+                            aria-label="Schedule a call" class="as-pr-btn-1-v2 tx-button">
+                                <span class="text">Schedule a call</span>
+                                                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="fi_12116860" height="100" viewBox="0 0 100 100" width="100"><g><circle cx="90.5" cy="50" r="4.5"></circle><circle cx="77" cy="50" r="4.5"></circle><circle cx="77" cy="63.5" r="4.5"></circle><circle cx="77" cy="36.5" r="4.5"></circle><circle cx="63.5" cy="50" r="4.5"></circle><circle cx="50" cy="50" r="4.5"></circle><circle cx="36.5" cy="50" r="4.5"></circle><circle cx="23" cy="50" r="4.5"></circle><circle cx="9.5" cy="50" r="4.5"></circle><circle cx="63.5" cy="77" r="4.5"></circle><circle cx="63.5" cy="23" r="4.5"></circle></g></svg>                                </span>
+                                                            </a>
+                            
+                            <p class="as-p-1 box-address">
+                                or email us at                                <a href="mailto:info@analytixtech.io"
+                                target="_self"
+                                rel=""
+                                aria-label="info@analytixtech.io">
+                                    info@analytixtech.io                                                                    </a>
+                            </p>
+                        </div>
+                        
+                                            </div>
+                </div>
+            </div>
+
+            <!-- hero-img -->
+                        <div class="as-hero-1-img">
+                <div id="wa_liquid_img" class="wa_tilt_elm">
+                    <img decoding="async" class="hero-main-img" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/h1-man.webp" alt="h1-man">
+                </div>
+            </div>
+                    </div>
+    </div>
+</section>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-46c5c1c e-con-full e-flex e-con e-parent" data-id="46c5c1c" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-97680c7 e-flex e-con-boxed e-con e-child" data-id="97680c7" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-14232a7 e-con-full e-flex e-con e-child" data-id="14232a7" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-54438e8 elementor-widget elementor-widget-heading" data-id="54438e8" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">One System, Better Control</h2>				</div>
+				<div class="elementor-element elementor-element-5844600 elementor-widget elementor-widget-heading" data-id="5844600" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<p class="elementor-heading-title elementor-size-default">When teams rely on disconnected tools, productivity and control often suffer. Odoo ERP implementation creates one integrated system for your key business functions. We help automate processes, improve reporting, increase accuracy, and deliver real-time insights that strengthen daily operations and long-term business growth.</p>				</div>
+				<div class="elementor-element elementor-element-5c7d21a elementor-widget elementor-widget-html" data-id="5c7d21a" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="btn-wrap wow fadeInRight2" style="visibility: visible; animation-name: fadeInRight2;">
+                    <a href="https://analytixbss.com/technew/contact-us/" target="_self" rel="" class="as-pr-btn-3 tx-button">
+                        <span class="text" data-back="LET'S GET STARTED" data-front="LET'S GET STARTED">
+                        </span>
+
+                                                <span class="icon">
+                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                        </span>
+                                            </a>
+                </div>				</div>
+				</div>
+		<div class="elementor-element elementor-element-81214be e-con-full e-flex e-con e-child" data-id="81214be" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5cef462 ai-rotate elementor-widget elementor-widget-image" data-id="5cef462" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+															<img fetchpriority="high" decoding="async" width="640" height="640" src="https://analytixbss.com/technew/wp-content/uploads/2026/04/img-768x768.png" class="attachment-medium_large size-medium_large wp-image-4755" alt="" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/04/img-768x768.png 768w, https://analytixbss.com/technew/wp-content/uploads/2026/04/img-300x300.png 300w, https://analytixbss.com/technew/wp-content/uploads/2026/04/img-150x150.png 150w, https://analytixbss.com/technew/wp-content/uploads/2026/04/img-600x600.png 600w, https://analytixbss.com/technew/wp-content/uploads/2026/04/img-100x100.png 100w, https://analytixbss.com/technew/wp-content/uploads/2026/04/img.png 1024w" sizes="(max-width: 640px) 100vw, 640px" />															</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-4be1c4d e-con-full solutions e-flex e-con e-parent" data-id="4be1c4d" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				<div class="elementor-element elementor-element-95a2abe solutions elementor-widget elementor-widget-tx_service_section elh-el tx_service_section" data-id="95a2abe" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_8&quot;}" data-widget_type="tx_service_section.default">
+				<div class="elementor-widget-container">
+					<section class="as-projects-3-area wa-p-relative pt-80 pb-135 tx-section">
+    <!-- bg-img -->
+        <div class="as-projects-3-bg-img">
+        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-bg-img-1.webp" alt="p3-bg-img-1">
+    </div>
+        <!-- bg-img -->
+        <div class="as-projects-3-bg-img-2">
+        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-bg-img-2.webp" alt="p3-bg-img-2">
+    </div>
+    
+    <div class="container as-container-1">
+
+        <!-- section-title -->
+        <h2 class="as-projects-3-sec-title as-h-1 mb-80">
+                        <span class="title-1 wa_title_spilt_1 tx-subTitle">Our </span>
+                        <span class="title-2">
+                Odoo                <div class="title-img">
+                                        <div class="title-img-elm wa-fix wa-img-cover">
+                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-title-img-1.webp" alt="p3-title-img-1">
+                    </div>
+                    
+                                        <div class="title-img-elm wa-fix wa-img-cover">
+                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-title-img-2.webp" alt="p3-title-img-2">
+                    </div>
+                                    </div>
+                  Services            </span>
+        </h2>
+
+        <div class="as-projects-3-wrap">
+            <!-- col -->
+            <div class="item-col">
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 ">
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Odoo-Consulting-Gap-Analysis.jpg" alt="Odoo Consulting & Gap Analysis">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Odoo Consulting &amp; Gap Analysis">
+                                Odoo Consulting &amp; Gap Analysis                            </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            Before we even think of configuring a single setting, we sit down and understand how your business operation actually works. We map out your current processes and identify areas that need improvement. That way, we can configure Odoo effortlessly fit your unique workflows, not just a generic setup.                        </p>
+                                            </div>
+                </div>
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 has-sm-size">
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Custom-Implementation-Configuration.jpg" alt="Custom Implementation &#038; Configuration">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Custom Implementation &amp; Configuration ">
+                                Custom Implementation &amp; Configuration                             </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            Every business is different, and we ensure your Odoo implementation reflects that. We’ll configure the modules that fit your workflows, set up your pipelines, and make sure everything is integrated smoothly.                          </p>
+                                            </div>
+                </div>
+                
+            </div>
+            <!-- col -->
+            <div class="item-col">
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 has-xs-size" data-wow-delay=&quot;.2s&quot;>
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Data-Migration-from-Legacy-Systems.jpg" alt="Data Migration from Legacy Systems">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Data Migration from Legacy Systems  ">
+                                Data Migration from Legacy Systems                              </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            Moving all the data from spreadsheets, old software, or a previous ERP can be a real headache during implementation. But don’t worry, we’ve got you! Our team will handle the extraction, cleaning, and migration so your historical records land in Odoo effortlessly and ready to use.                          </p>
+                                            </div>
+                </div>
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 " >
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Module-Customisation-Development.jpg" alt="Module Customisation & Development">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Module Customisation &amp; Development  ">
+                                Module Customisation &amp; Development                              </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            Sometimes, the standard modules won’t quite fit your business. That’s not a problem for us! We'll build custom modules and features to bridge those gaps, making sure Odoo works around your business, not the other way around.                          </p>
+                                            </div>
+                </div>
+                
+                <!-- all-btn -->
+                
+            </div>
+            <!-- col -->
+            <div class="item-col">
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 has-sm-size" data-wow-delay=&quot;.2s&quot;>
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Team-Training-Change-Management.jpg" alt="Team Training &#038; Change Management">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Team Training &amp; Change Management  ">
+                                Team Training &amp; Change Management                              </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            The best ERP in the world can be useless if your team doesn’t know how to actually use it. That's why we have hands-on training sessions for each role and requirement. We want to make sure your people feel comfortable and confident with the new system.                          </p>
+                                            </div>
+                </div>
+                                <div class="as-projects-3-item tx-service-item wa-p-relative wa_magnetic_1_trigger wow fadeInUp2 has-xs-size" >
+                    
+                    <div class="item-img wa-fix wa-img-cover wa-p-relative">
+                                                <img decoding="async" class="wa_magnetic_1_elm" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Ongoing-Support-Maintenance.jpg" alt="Ongoing Support & Maintenance">
+                        
+                                            </div>
+                    <div class="title-x-date">
+                                                <h4 class="as-h-1 title tx-service-title">
+                            <a href=""
+                            target="_self"
+                            rel=""
+                            aria-label="Ongoing Support &amp; Maintenance ">
+                                Ongoing Support &amp; Maintenance                             </a>
+                        </h4>
+                        
+                                                <p class="as-p-1 date tx-service-desc">
+                            We don’t disappear after go-live, we stick around. Whether it’s a bug, a new requirement or a team member who missed the training, we’re here to help you keep things running smoothly.                          </p>
+                                            </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</section>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-65cf0c0 e-con-full  challenge e-flex e-con e-parent" data-id="65cf0c0" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-76a1ee1 elementor-widget elementor-widget-tx_service_section elh-el tx_service_section" data-id="76a1ee1" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_6&quot;}" data-widget_type="tx_service_section.default">
+				<div class="elementor-widget-container">
+					<section class="as-process-2-area pb-160 pt-130 wa-fix tx-section ">
+    <div class="container as-container-2">
+
+        <!-- section-title -->
+        <div class="as-process-2-sec-title mb-70">
+                        <h2 class="tx-title as-sec-title-2 wa_title_spilt_1">The Challenge of Odoo ERP Implementation</h2>                        <p class="as-p-2 sec-disc tx-description">
+                Many businesses rely on disconnected tools and manual workflows, making it difficult to manage operations efficiently. This lack of integration leads to delays, errors, and limited control over critical business processes. As operations grow, these challenges become more visible impacting productivity, decision-making, and overall business performance.            </p>
+                    </div>
+
+        <div class="as-process-2-wrap wa-p-relative">
+                        <div class="as-process-2-item tx-service-item wa-p-relative">
+                                <div class="icon">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p2-icon-1.svg" alt="p2-icon-1">
+                </div>
+                
+                                <h3 class="as-h-2 title tx-service-title">Scattered data across spreadsheets</h3>
+                
+                                <p class="as-p-2 disc tx-service-desc">
+                    Your sales team has one file, finance has another, and operations are using another. No one has the complete picture, and by the time they do, the data becomes outdated.                </p>
+                
+                            </div>
+                        <div class="as-process-2-item tx-service-item wa-p-relative">
+                                <div class="icon">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p2-icon-2.svg" alt="p2-icon-2">
+                </div>
+                
+                                <h3 class="as-h-2 title tx-service-title">No visibility into operations</h3>
+                
+                                <p class="as-p-2 disc tx-service-desc">
+                    You don’t know what’s in stock, what’s been invoiced, or which projects are delayed, without reaching out to the people working in the particular section. Running a business with a clarity of things is exhausting and costly.                </p>
+                
+                            </div>
+                        <div class="as-process-2-item tx-service-item wa-p-relative">
+                                <div class="icon">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p2-icon-2.svg" alt="p2-icon-2">
+                </div>
+                
+                                <h3 class="as-h-2 title tx-service-title">Manual processes costing time and money</h3>
+                
+                                <p class="as-p-2 disc tx-service-desc">
+                    
+When your team invests hours on data entry, sending follow-up emails, and copy-pasting information between systems, that time quickly accumulates. And mistakes are bound to happen when everything is done manually.                </p>
+                
+                            </div>
+                        <div class="as-process-2-item tx-service-item wa-p-relative">
+                                <div class="icon">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p2-icon-4.svg" alt="p2-icon-4">
+                </div>
+                
+                                <h3 class="as-h-2 title tx-service-title"> Struggling to scale with current systems</h3>
+                
+                                <p class="as-p-2 disc tx-service-desc">
+                    What worked with 10 people won’t work with 50. Disconnected tools, no automation, and no central system result in every new hire adding more chaos rather than increasing capacity.                </p>
+                
+                            </div>
+                    </div>
+    </div>
+</section>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-8dde2dd e-con-full e-flex e-con e-parent" data-id="8dde2dd" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-512fb08 odoosec elementor-widget elementor-widget-html" data-id="512fb08" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<section class="odoo-section">
+
+  <!-- HEADER -->
+  <div class="odoo-header">
+    <h1>One System. A Different Way of Working.</h1>
+    <p>Here's what changes when everything is connected.</p>
+  </div>
+
+  <div class="odoo-wrapper">
+
+    <!-- BEFORE -->
+    <div class="odoo-col before">
+      <h2>Before Odoo</h2>
+
+      <div class="odoo-item">
+        <span>📂</span>
+        <p>Data lives everywhere, different teams use different files.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>⏳</span>
+        <p>Reports take time - you chase people for updates.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>📩</span>
+        <p>Approvals get stuck in inboxes.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>✍️</span>
+        <p>Same data entered multiple times.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>📊</span>
+        <p>Month-end is stressful and messy.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>⚠️</span>
+        <p>Scaling creates more complexity.</p>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="odoo-divider"></div>
+
+    <!-- AFTER -->
+    <div class="odoo-col after">
+      <h2>After Odoo</h2>
+
+      <div class="odoo-item">
+        <span>🌐</span>
+        <p>One source of truth across all departments.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>⚡</span>
+        <p>Real-time dashboards give instant insights.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>🔄</span>
+        <p>Automated workflows keep things moving.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>🔗</span>
+        <p>Enter once - everything updates everywhere.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>📅</span>
+        <p>Month-end becomes simple and predictable.</p>
+      </div>
+
+      <div class="odoo-item">
+        <span>📈</span>
+        <p>Scale smoothly without extra chaos.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.odoo-section {
+  padding: 100px 20px;
+  /*background: linear-gradient(135deg, #312e81, #0f172a);*/
+  position: relative;
+  overflow: hidden;
+  /*font-family: 'Poppins', sans-serif;*/
+  border-radius: 10px;
+}
+
+/* glowing background */
+.odoo-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #7c3aed;
+  filter: blur(140px);
+  top: -100px;
+  left: -100px;
+  opacity: 0.25;
+}
+
+/* HEADER */
+.odoo-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.odoo-header.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.odoo-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  /*background: linear-gradient(90deg, #7c3aed, #22d3ee);*/
+  background: linear-gradient(90deg, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.odoo-header p {
+  font-size: 18px;
+  color: #cbd5f5;
+}
+
+/* layout */
+.odoo-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.odoo-col {
+  flex: 1;
+}
+
+.odoo-col h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* divider */
+.odoo-divider {
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #7c3aed, transparent);
+  position: relative;
+}
+
+.odoo-divider::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -6px;
+  width: 14px;
+  height: 14px;
+  background: #7c3aed;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #7c3aed;
+}
+
+/* cards */
+.odoo-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e2e8f0;
+  transition: 0.4s ease;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.odoo-item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.odoo-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 20px rgba(124,58,237,0.3);
+}
+
+/* icons */
+.odoo-item span {
+  font-size: 22px;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.before span { color: #f87171; }
+.after span { color: #34d399; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* responsive */
+@media(max-width:768px){
+  .odoo-wrapper {
+    flex-direction: column;
+  }
+  .odoo-divider {
+    display: none;
+  }
+  .odoo-header h1 {
+    font-size: 28px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll(".odoo-item");
+  const header = document.querySelector(".odoo-header");
+
+  function reveal() {
+    const trigger = window.innerHeight * 0.85;
+
+    items.forEach(item => {
+      const top = item.getBoundingClientRect().top;
+      if (top < trigger) {
+        item.classList.add("show");
+      }
+    });
+
+    if (header) {
+      const top = header.getBoundingClientRect().top;
+      if (top < trigger) {
+        header.classList.add("show");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+  reveal();
+});
+</script>				</div>
+				</div>
+		<div class="elementor-element elementor-element-4cc9059 e-con-full solution-step e-flex e-con e-parent" data-id="4cc9059" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-f18a679 elementor-widget elementor-widget-tx_service_section elh-el tx_service_section" data-id="f18a679" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_3&quot;}" data-widget_type="tx_service_section.default">
+				<div class="elementor-widget-container">
+					<section class="as-process-1-area wa-fix pt-110 wa-p-relative p1_pin_elm_trigger tx-section ">
+    <div class="p1_pin_elm">
+        <div class="container as-container-1 ">
+            <div class="as-process-1-wrap">
+                <!-- section-title -->
+                <div class="as-process-1-sec-title ">
+                    <div class="left">
+                        <h2 class="tx-title as-sec-title-1">Implementation
+Process</h2>                                                <p class="as-p-1 sec-disc tx-description">
+                            From kickoff to go-live, it takes six to eight weeks. Here's what it looks like:                        </p>
+                                            </div>
+
+                                        <h6 class="as-subtitle-1 tx-subTitle">
+                        [Process]                    </h6>
+                                    </div>
+
+                <!-- right -->
+                <div class="as-process-1-right ">
+                                        <div class="as-process-1-card tx-service-item wa-bg-default " data-background="https://analytixbss.com/technew/wp-content/uploads/2025/10/s1-card-shape-1.webp">
+                        <div class="step-x-btn">
+                                                        <h4 class="as-h-1 step tx-service-step">
+                                Step 01                                <i aria-hidden="true" class="flaticon flaticon-star"></i>                            </h4>
+                                                        <!-- pr-btn -->
+
+                                                    </div>
+                                                <h4 class="as-h-1 title tx-service-title">Discovery &amp; Planning (Week 1)</h4>
+                        
+                                                <p class="as-p-1 disc tx-service-desc">We review your existing systems, understand workflows, and define the project scope. This stage ensures all requirements are clear and avoids surprises later.</p>
+                                            </div>
+                                        <div class="as-process-1-card tx-service-item wa-bg-default p1_ani_elm" data-background="https://analytixbss.com/technew/wp-content/uploads/2025/10/s1-card-shape-1.webp">
+                        <div class="step-x-btn">
+                                                        <h4 class="as-h-1 step tx-service-step">
+                                Step 02                                <i aria-hidden="true" class="flaticon flaticon-star"></i>                            </h4>
+                                                        <!-- pr-btn -->
+
+                                                    </div>
+                                                <h4 class="as-h-1 title tx-service-title">Configuration &amp; Setup (Weeks 2–3)</h4>
+                        
+                                                <p class="as-p-1 disc tx-service-desc">We set up your Odoo environment, configure modules, and build workflows. By the end of this phase, you’ll have a functional system ready for the next stage.</p>
+                                            </div>
+                                        <div class="as-process-1-card tx-service-item wa-bg-default p1_ani_elm" data-background="https://analytixbss.com/technew/wp-content/uploads/2025/10/s1-card-shape-1.webp">
+                        <div class="step-x-btn">
+                                                        <h4 class="as-h-1 step tx-service-step">
+                                Step 03                                <i aria-hidden="true" class="flaticon flaticon-star"></i>                            </h4>
+                                                        <!-- pr-btn -->
+
+                                                    </div>
+                                                <h4 class="as-h-1 title tx-service-title">Data Migration &amp; Testing (Weeks 4–6)</h4>
+                        
+                                                <p class="as-p-1 disc tx-service-desc">We extract, clean, and migrate your data from spreadsheets, legacy systems, or other ERPs into Odoo. Then, we test every process with your team, fix issues, and ensure everything is approved before launch.</p>
+                                            </div>
+                                        <div class="as-process-1-card tx-service-item wa-bg-default p1_ani_elm" data-background="https://analytixbss.com/technew/wp-content/uploads/2025/10/s1-card-shape-1.webp">
+                        <div class="step-x-btn">
+                                                        <h4 class="as-h-1 step tx-service-step">
+                                Step 04                                <i aria-hidden="true" class="flaticon flaticon-star"></i>                            </h4>
+                                                        <!-- pr-btn -->
+
+                                                    </div>
+                                                <h4 class="as-h-1 title tx-service-title">Training &amp; Go-Live (Weeks 7–8)</h4>
+                        
+                                                <p class="as-p-1 disc tx-service-desc">We provide role-based training so your team is fully prepared. Once ready, you go live with Odoo, with our support available to handle any queries or real-time challenges.</p>
+                                            </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    </section>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-019f08e e-con-full e-flex e-con e-parent" data-id="019f08e" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-310d5b9 elementor-widget elementor-widget-tx_about elh-el tx_about" data-id="310d5b9" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_4&quot;}" data-widget_type="tx_about.default">
+				<div class="elementor-widget-container">
+					<section class="as-about-4-area pt-85 pb-120 ">
+    <div class="container as-container-1">
+        <!-- section-title -->
+        <div class="as-about-4-sec-title mb-55">
+                        <div class="as-subtitle-4-wrap wa-fix wa-p-relative tx-subTitle">
+                <div class="wa_marquee_left_nopause d-inline-block">
+                    <div class="as-subtitle-4-text">
+                        <h4 class="as-subtitle-4">
+                            Who we are                        </h4>
+                        <h4 class="as-subtitle-4">
+                            Who we are                        </h4>
+                    </div>
+                </div>
+            </div>
+                        <h2 class="tx-title as-h-1 section-title wa_title_spilt_1">Building intelligent digital solutions for modern businesses</h2>        </div>
+
+        <div class="as-about-4-wrap">
+            <!-- disc -->
+            <div class="as-about-4-disc wa-p-relative">
+                                <p class="as-p-1 disc tx-description">
+                    Hundreds of brands rely on us to transform their ideas into powerful digital solutions. Our commitment to innovation, quality, and client success drives everything we do helping businesses grow, scale, and stand out in a competitive digital world.                </p>
+                                <div class="inner-div">
+                    <div class="author-rating">
+                                                                    </div>
+                                    </div>
+
+                                <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/a4-bg-shape.webp" alt="a4-bg-shape" class="bg-img">
+                            </div>
+
+            <!-- experience -->
+                        <div class="as-about-4-experience wa-bg-default" data-background="https://analytixbss.com/technew/wp-content/uploads/2025/11/a4-img-1.webp">
+                                <h3 class="as-h-1 title wa_title_spilt_1">
+                    Smart Solutions for Modern Businesses                </h3>
+                
+                                <p class="as-p-1 disc">
+                    Helping you simplify processes, improve efficiency, and scale with confidence through innovative digital technologies.                </p>
+                            </div>
+            
+        </div>
+
+        <div class="as-about-4-wrap-2">
+
+                        <div class="as-about-4-growth">
+                                <h4 class="as-h-1 title">
+                    Business Growth                </h4>
+                
+                                <p class="as-p-1 disc">We turn innovative ideas into measurable results by combining strategy, design, and technology helping your business achieve sustainable growth and digital success.</p>
+                
+                                <div class="img-elm wa_add_class">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/a4-progress-img.webp" alt="a4-progress-img">
+                </div>
+                            </div>
+            
+            <div class="as-about-4-marquee wa-p-relative">
+                                <div class="marquee-bg">
+                    <div class="wa-fix">
+                        <div class="wa_marquee_left_nopause d-inline-block">
+                            <div class="as-about-4-marquee-item">
+                                                                <div class="single-elm wa-p-relative">
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p1-img-1.webp" alt="p1-img-1" class="main-img">
+                                    
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-item-logo.webp" alt="p3-item-logo" class="logo">
+                                                                    </div>
+                                                                <div class="single-elm wa-p-relative">
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p1-img-2.webp" alt="p1-img-2" class="main-img">
+                                    
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-item-logo.webp" alt="p3-item-logo" class="logo">
+                                                                    </div>
+                                                                <div class="single-elm wa-p-relative">
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p1-img-3.webp" alt="p1-img-3" class="main-img">
+                                    
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-item-logo.webp" alt="p3-item-logo" class="logo">
+                                                                    </div>
+                                                                <div class="single-elm wa-p-relative">
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p1-img-4.webp" alt="p1-img-4" class="main-img">
+                                    
+                                                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/11/p3-item-logo.webp" alt="p3-item-logo" class="logo">
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- content -->
+                                <div class="as-about-4-marquee-content">
+                    <h3 class="as-h-1 title"><span class="odometer" data-count="17">00</span>+ Years of experiences</h3>
+                                        <p class="as-p-1 disc">
+                        With years of industry experience, we specialize in crafting high-performance websites, scalable applications, and secure IT systems that drive efficiency and business growth across various industries.                    </p>
+                                    </div>
+                
+                <div class="as-about-4-marquee-bg-line">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-239112d soluindus e-flex e-con-boxed e-con e-parent" data-id="239112d" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-c930216 e-con-full e-flex e-con e-child" data-id="c930216" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-36ed746 elementor-widget elementor-widget-html" data-id="36ed746" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="as-faqs-1-left">
+                <!-- section-title -->
+                <div class="as-faqs-1-left-sec-title text-center mb-60">
+                        <!--                <h6 class="as-subtitle-1 tx-subTitle">-->
+                        <!--<span class="icon">-->
+                        <!--    {<i aria-hidden="true" class="fas fa-circle"></i>}                        </span>-->
+                        <!--Awards                    </h6>-->
+                                        <h2 class="tx-title as-sec-title-1">Industries We Serve with Odoo </h2>                                        <p class="tx-description" style="color:#ffff;">Odoo can adapt to various types of industries. We have improved our implementation approach for the following ones, so you get a setup that suits your needs from the beginning.  
+                                            </p>
+                                    </div>
+
+                <!-- awards-list -->
+                <div class="as-faqs-1-awards">
+                                      
+                    
+                                        
+                    
+                                        <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/faqs1-clr.webp" alt="faqs1-clr" class="bg-shape-3">
+                    
+                                                                    <p class="as-faqs-1-awards-single as-p-1 wow backInUp2" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: backInUp2;">Industry-Specific Odoo Solutions                    </p>
+                                                <p class="as-faqs-1-awards-single as-p-1 wow backInUp2" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: backInUp2;">Seamless Process Automation                </p>
+                                                <p class="as-faqs-1-awards-single as-p-1 wow backInUp2" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: backInUp2;">
+                            Scalable & Flexible ERP Systems                       </p>
+                                            
+                </div>
+
+            </div>				</div>
+				</div>
+		<div class="elementor-element elementor-element-61fbd97 e-con-full e-flex e-con e-child" data-id="61fbd97" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-29cdf64 tx-title as-sec-title-1 elementor-widget elementor-widget-heading" data-id="29cdf64" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h2 class="elementor-heading-title elementor-size-default">Industry-specific solutions with Odoo.</h2>				</div>
+				<div class="elementor-element elementor-element-2ce47b5 e-n-tabs-mobile elementor-widget elementor-widget-n-tabs" data-id="2ce47b5" data-element_type="widget" data-e-type="widget" data-settings="{&quot;horizontal_scroll&quot;:&quot;disable&quot;}" data-widget_type="nested-tabs.default">
+							<div class="e-n-tabs" data-widget-number="47073205" aria-label="Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys.">
+			<div class="e-n-tabs-heading" role="tablist">
+					<button id="e-n-tab-title-470732051" data-tab-title-id="e-n-tab-title-470732051" class="e-n-tab-title" aria-selected="true" data-tab-index="1" role="tab" tabindex="0" aria-controls="e-n-tab-content-470732051" style="--n-tabs-title-order: 1;">
+						<span class="e-n-tab-title-text">
+				Food &amp; Beverage 			</span>
+		</button>
+				<button id="e-n-tab-title-470732052" data-tab-title-id="e-n-tab-title-470732052" class="e-n-tab-title" aria-selected="false" data-tab-index="2" role="tab" tabindex="-1" aria-controls="e-n-tab-content-470732052" style="--n-tabs-title-order: 2;">
+						<span class="e-n-tab-title-text">
+				Logistics &amp; Distribution 			</span>
+		</button>
+				<button id="e-n-tab-title-470732053" data-tab-title-id="e-n-tab-title-470732053" class="e-n-tab-title" aria-selected="false" data-tab-index="3" role="tab" tabindex="-1" aria-controls="e-n-tab-content-470732053" style="--n-tabs-title-order: 3;">
+						<span class="e-n-tab-title-text">
+				Manufacturing 			</span>
+		</button>
+				<button id="e-n-tab-title-470732054" data-tab-title-id="e-n-tab-title-470732054" class="e-n-tab-title" aria-selected="false" data-tab-index="4" role="tab" tabindex="-1" aria-controls="e-n-tab-content-470732054" style="--n-tabs-title-order: 4;">
+						<span class="e-n-tab-title-text">
+				Construction 			</span>
+		</button>
+					</div>
+			<div class="e-n-tabs-content">
+				<div id="e-n-tab-content-470732051" role="tabpanel" aria-labelledby="e-n-tab-title-470732051" data-tab-index="1" style="--n-tabs-title-order: 1;" class="e-active elementor-element elementor-element-a0cd454 e-con-full e-flex e-con e-child" data-id="a0cd454" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-fb5a7d0 elementor-position-top elementor-widget elementor-widget-image-box" data-id="fb5a7d0" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="810" height="540" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Food-Beverage.jpg" class="attachment-full size-full wp-image-5884" alt="Food &amp; Beverage" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/05/Food-Beverage.jpg 810w, https://analytixbss.com/technew/wp-content/uploads/2026/05/Food-Beverage-300x200.jpg 300w, https://analytixbss.com/technew/wp-content/uploads/2026/05/Food-Beverage-768x512.jpg 768w" sizes="(max-width: 810px) 100vw, 810px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Food &amp; Beverage </h3><p class="elementor-image-box-description">Manage your restaurant or F&amp;B business from the kitchen to the customer.  </p></div></div>				</div>
+				<div class="elementor-element elementor-element-a13b8cd elementor-widget elementor-widget-html" data-id="a13b8cd" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="btn-wrap wow fadeInRight2" style="visibility: visible; animation-name: fadeInRight2;">
+                    <a href="https://analytixbss.com/technew/industries/odoo-for-fnb/" target="_self" rel="" class="as-pr-btn-3 tx-button">
+                        <span class="text" data-back="Read More" data-front="Read More">
+                        </span>
+
+                                                <span class="icon">
+                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                        </span>
+                                            </a>
+                </div>				</div>
+				</div>
+		<div id="e-n-tab-content-470732052" role="tabpanel" aria-labelledby="e-n-tab-title-470732052" data-tab-index="2" style="--n-tabs-title-order: 2;" class=" elementor-element elementor-element-5aca7cb e-con-full e-flex e-con e-child" data-id="5aca7cb" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-270d970 elementor-position-top elementor-widget elementor-widget-image-box" data-id="270d970" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="810" height="540" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Logistics.jpg" class="attachment-full size-full wp-image-5885" alt="Logistics" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/05/Logistics.jpg 810w, https://analytixbss.com/technew/wp-content/uploads/2026/05/Logistics-300x200.jpg 300w, https://analytixbss.com/technew/wp-content/uploads/2026/05/Logistics-768x512.jpg 768w" sizes="(max-width: 810px) 100vw, 810px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Logistics &amp; Distribution </h3><p class="elementor-image-box-description">Ensure freight is moving, inventory is precise, and deliveries are on time.  </p></div></div>				</div>
+				<div class="elementor-element elementor-element-33a5605 elementor-widget elementor-widget-html" data-id="33a5605" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="btn-wrap wow fadeInRight2" style="visibility: visible; animation-name: fadeInRight2;">
+                    <a href="https://analytixbss.com/technew/industries/odoo-for-logistics" target="_self" rel="" class="as-pr-btn-3 tx-button">
+                        <span class="text" data-back="Read More" data-front="Read More">
+                        </span>
+
+                                                <span class="icon">
+                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                        </span>
+                                            </a>
+                </div>				</div>
+				</div>
+		<div id="e-n-tab-content-470732053" role="tabpanel" aria-labelledby="e-n-tab-title-470732053" data-tab-index="3" style="--n-tabs-title-order: 3;" class=" elementor-element elementor-element-4b5582d e-con-full e-flex e-con e-child" data-id="4b5582d" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-1d8a448 elementor-position-top elementor-widget elementor-widget-image-box" data-id="1d8a448" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="810" height="540" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/manufacturing.jpg" class="attachment-full size-full wp-image-5886" alt="manufacturing" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/05/manufacturing.jpg 810w, https://analytixbss.com/technew/wp-content/uploads/2026/05/manufacturing-300x200.jpg 300w, https://analytixbss.com/technew/wp-content/uploads/2026/05/manufacturing-768x512.jpg 768w" sizes="(max-width: 810px) 100vw, 810px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Manufacturing </h3><p class="elementor-image-box-description">Connect your shop floor with your back office, in real time.</p></div></div>				</div>
+				<div class="elementor-element elementor-element-aba8a24 elementor-widget elementor-widget-html" data-id="aba8a24" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="btn-wrap wow fadeInRight2" style="visibility: visible; animation-name: fadeInRight2;">
+                    <a href="https://analytixbss.com/technew/industries/odoo-for-manufacturing" target="_self" rel="" class="as-pr-btn-3 tx-button">
+                        <span class="text" data-back="Read More" data-front="Read More">
+                        </span>
+
+                                                <span class="icon">
+                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                        </span>
+                                            </a>
+                </div>				</div>
+				</div>
+		<div id="e-n-tab-content-470732054" role="tabpanel" aria-labelledby="e-n-tab-title-470732054" data-tab-index="4" style="--n-tabs-title-order: 4;" class=" elementor-element elementor-element-d3870a0 e-con-full e-flex e-con e-child" data-id="d3870a0" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-535e6fb elementor-position-top elementor-widget elementor-widget-image-box" data-id="535e6fb" data-element_type="widget" data-e-type="widget" data-widget_type="image-box.default">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="810" height="540" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/construction.jpg" class="attachment-full size-full wp-image-5887" alt="construction" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/05/construction.jpg 810w, https://analytixbss.com/technew/wp-content/uploads/2026/05/construction-300x200.jpg 300w, https://analytixbss.com/technew/wp-content/uploads/2026/05/construction-768x512.jpg 768w" sizes="(max-width: 810px) 100vw, 810px" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Construction </h3><p class="elementor-image-box-description">Manage and track projects, procurement, and subcontractors from a single platform.  </p></div></div>				</div>
+				<div class="elementor-element elementor-element-8161a04 elementor-widget elementor-widget-html" data-id="8161a04" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+					<div class="btn-wrap wow fadeInRight2" style="visibility: visible; animation-name: fadeInRight2;">
+                    <a href="https://analytixbss.com/technew/industries/odoo-for-construction" target="_self" rel="" class="as-pr-btn-3 tx-button">
+                        <span class="text" data-back="Read More" data-front="Read More">
+                        </span>
+
+                                                <span class="icon">
+                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                            <i aria-hidden="true" class=" far fa-arrow-right"></i>                        </span>
+                                            </a>
+                </div>				</div>
+				</div>
+					</div>
+		</div>
+						</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-ba1309b industries e-flex e-con-boxed e-con e-parent" data-id="ba1309b" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-fe3c6f3 elementor-widget elementor-widget-tx_testimonial elh-el tx_testimonial" data-id="fe3c6f3" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_1&quot;}" data-widget_type="tx_testimonial.default">
+				<div class="elementor-widget-container">
+					<section class="as-testimonial-1-area pt-80 tx-section ">
+    <div class="container as-container-1">
+        <!-- section-section -->
+        <div class="as-testimonial-1-sec-title text-center mb-40">
+                        <h6 class="as-subtitle-1 tx-subTitle">
+                <span class="icon">
+                                    </span>
+                            </h6>
+                        <h2 class="tx-title as-sec-title-1 wa_title_spilt_1">What businesses achieve with Odoo ERP</h2>        </div>
+
+        <div class="as-testimonial-1-wrap">
+
+            <!-- col-1 -->
+            <div class="item-col">
+                <!-- single-item -->
+                                <div class="as-testimonial-1-item wow fadeInUp2 tx-testimonial-item">
+                                        <h4 class="as-h-1 title tx-testimonial-title">
+                        40–60%                    </h4>
+                    
+                                        <p class="as-p-1 comment tx-testimonial-comment">Reduction in manual work
+within the first few months of implementation.</p>
+                    
+                    <div class="author-x-logo">
+                        <div class="item-author">
+                                                        <div class="item-author-content">
+                                
+                                                            </div>
+                        </div>
+                                            </div>
+                </div>
+                
+                <!-- single-item -->
+                                                            <div class="as-testimonial-1-video wow fadeInUp2" data-wow-delay=".2s">
+                            <iframe
+                                src="https://www.youtube.com/embed/ea6Hd25PobQ?autoplay=1&mute=1&loop=1"
+                                frameborder="0"
+                                allow="autoplay; fullscreen"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                                                </div>
+
+            <!-- col-2 -->
+            <div class="item-col">
+                <!-- single-item -->
+                                <div class="as-testimonial-1-item wow fadeInUp2 tx-testimonial-item">
+                                        <h4 class="as-h-1 title tx-testimonial-title">
+                        3x faster                    </h4>
+                    
+                                        <p class="as-p-1 comment tx-testimonial-comment">Business operations and reporting
+with fully integrated workflows.</p>
+                    
+                    <div class="author-x-logo">
+                        <div class="item-author">
+                                                        <div class="item-author-content">
+                                
+                                                            </div>
+                        </div>
+                                            </div>
+                </div>
+                                <div class="as-testimonial-1-item wow fadeInUp2 tx-testimonial-item">
+                                        <h4 class="as-h-1 title tx-testimonial-title">
+                        90%+                    </h4>
+                    
+                                        <p class="as-p-1 comment tx-testimonial-comment">Improved data accuracy
+with centralized and automated processes.</p>
+                    
+                    <div class="author-x-logo">
+                        <div class="item-author">
+                                                        <div class="item-author-content">
+                                
+                                                            </div>
+                        </div>
+                                            </div>
+                </div>
+                            </div>
+
+            <!-- col-3 -->
+            <div class="item-col">
+                <!-- single-item -->
+                                <div class="as-testimonial-1-video wow fadeInUp2">
+                                            <div class="as-testimonial-1-video wow fadeInUp2" data-wow-delay=".2s">
+                            <iframe
+                                src="https://www.youtube.com/embed/FvSn_2LtFNg?autoplay=1&mute=1&loop=1"
+                                frameborder="0"
+                                allow="autoplay; fullscreen"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                                    </div>
+                
+                <!-- single-item -->
+                                <div class="as-testimonial-1-item wow fadeInUp2 tx-testimonial-item">
+                                        <h4 class="as-h-1 title tx-testimonial-title">
+                        25–35% lower                    </h4>
+                    
+                                        <p class="as-p-1 comment tx-testimonial-comment">Operational costs by eliminating redundant tools and inefficiencies.</p>
+                    
+                    <div class="author-x-logo">
+                        <div class="item-author">
+                                                        <div class="item-author-content">
+                                
+                                                            </div>
+                        </div>
+                                            </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+
+    </section>				</div>
+				</div>
+				<div class="elementor-element elementor-element-e1a4eb9 elementor-widget elementor-widget-text-editor" data-id="e1a4eb9" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p>These insights are drawn from real-world Odoo ERP implementations across industries, showcasing proven results rather than theoretical estimates.</p>								</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-614910e e-con-full e-flex e-con e-parent" data-id="614910e" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-135ea38 cta2 elementor-widget elementor-widget-tx_cta elh-el tx_cta" data-id="135ea38" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_1&quot;}" data-widget_type="tx_cta.default">
+				<div class="elementor-widget-container">
+					<section class="as-cta-1-area tx-section ">
+    <!-- top-experience -->
+    <div class="container as-container-1">
+        <div class="as-cta-1-experi">
+                        <p class="as-cta-1-experi-title as-h-1">
+                <span class="number tx-cta-count-prefix">
+                    <span class="odometer tx-cta-count-num" data-count="15">00</span>+                </span>
+                </span>
+                <span class="tx-cta-count-title">Years of experiences of these industries!</span>
+            </p>
+            
+                        <div class="as-cta-1-experi-services">
+                                <a href="#"
+                target="_self"
+                rel=""
+                aria-label="Web Design"
+                class="link-elm as-h-1 tx-cta-tag wow fadeInLeft2"
+                data-wow-delay=".2s">
+                    Web Design                </a>
+                                <a href="#"
+                target="_self"
+                rel=""
+                aria-label="Logo Design"
+                class="link-elm as-h-1 tx-cta-tag wow fadeInLeft2"
+                data-wow-delay=".1s">
+                    Logo Design                </a>
+                                <a href="#"
+                target="_self"
+                rel=""
+                aria-label="Web Development"
+                class="link-elm as-h-1 tx-cta-tag wow fadeInLeft2"
+                data-wow-delay="">
+                    Web Development                </a>
+                                <a href="#"
+                target="_self"
+                rel=""
+                aria-label="App Design"
+                class="link-elm as-h-1 tx-cta-tag wow fadeInLeft2"
+                data-wow-delay=".1s">
+                    App Design                </a>
+                                <a href="#"
+                target="_self"
+                rel=""
+                aria-label="Digital Marketing"
+                class="link-elm as-h-1 tx-cta-tag wow fadeInLeft2"
+                data-wow-delay=".2s">
+                    Digital Marketing                </a>
+                            </div>
+            
+        </div>
+    </div>
+
+    <!-- bottom-content -->
+    <div class="as-cta-1-bg wa-fix">
+        <div class="container as-container-1">
+            <div class="as-cta-1-wrap wa-p-relative cta1_trigger">
+                <!-- social -->
+                <div class="as-cta-1-social">
+                                        <a href="https://www.linkedin.com/company/analytix-global"
+                    target="_self"
+                    rel=""
+                    aria-label="LinkedIn"
+                    class="link-elm as-p-1 wow fadeInLeft2 wa_magnetic_btn_1" data-wow-delay=".2s">
+                        LinkedIn                        <i aria-hidden="true" class=" fas fa-long-arrow-right"></i>                    </a>
+                                        <a href="https://www.instagram.com/analytixtech/"
+                    target="_self"
+                    rel=""
+                    aria-label="Instagram"
+                    class="link-elm as-p-1 wow fadeInLeft2 wa_magnetic_btn_1" data-wow-delay=".1s">
+                        Instagram                        <i aria-hidden="true" class=" fas fa-long-arrow-right"></i>                    </a>
+                                        <a href="https://www.facebook.com/analytixtechnology"
+                    target="_self"
+                    rel=""
+                    aria-label="Facebook"
+                    class="link-elm as-p-1 wow fadeInRight2 wa_magnetic_btn_1" data-wow-delay="">
+                        Facebook                        <i aria-hidden="true" class=" fas fa-long-arrow-right"></i>                    </a>
+                                    </div>
+
+                <div class="as-cta-1-content">
+
+                                        <h3 class="as-h-1 title-1 tx-subTitle">
+                        Let&#039;s Work                    </h3>
+                    
+                                        <h2 class="as-h-1 title-2 tx-title">
+                        Together!                    </h2>
+                    
+                    <div class="btn-wrap">
+
+                        <!-- pr-btn -->
+                                                <a href="https://analytixbss.com/technew/contact-us/"
+                        target="_self"
+                        rel=""
+                        aria-label="Get started today" class="as-pr-btn-1 wa_btn_split_1 wa_magnetic_btn_1 tx-button">
+                            <span class="text">Get started today</span>
+                                                        <span class="icon">
+                                <span class="icon-fix wa-fix">
+                                    <i aria-hidden="true" class="flaticon flaticon-dot-arrow-1"></i>                                    <i aria-hidden="true" class="flaticon flaticon-next"></i>                                </span>
+                            </span>
+                                                    </a>
+                        
+                        
+                    </div>
+
+                                    </div>
+
+                <!-- img-1 -->
+                                 <div class="as-cta-1-img-1 wa-fix wa-img-cover">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/cta1-img-1.webp" alt="cta1-img-1">
+                </div>
+                
+                <!-- img-2 -->
+                                <div class="as-cta-1-img-2 wa-fix wa-img-cover">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/cta1-img-2.webp" alt="cta1-img-2">
+                </div>
+                
+                                <div class="as-cta-1-hand-1 wa-fix">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/cta1-hand-1.webp" alt="cta1-hand-1">
+                </div>
+                
+                                <div class="as-cta-1-hand-2 wa-fix">
+                    <img decoding="async" src="https://analytixbss.com/technew/wp-content/uploads/2025/10/cta1-hand-2.webp" alt="cta1-hand-2">
+                </div>
+                            </div>
+
+        </div>
+    </div>
+</section>				</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-8c1f656 e-con-full e-flex e-con e-parent" data-id="8c1f656" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-70412b2 faqnew elementor-widget elementor-widget-tx_faq elh-el tx_faq" data-id="70412b2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;design_style&quot;:&quot;style_2&quot;}" data-widget_type="tx_faq.default">
+				<div class="elementor-widget-container">
+					<section class="as-faqs-2-area pt-130 wa-p-relative wa-fix tx-section ">
+    <div class="container as-container-2">
+        <!-- section-title -->
+        <div class="as-faqs-2-sec-title mb-50">
+                        <h6 class="as-subtitle-2 tx-subTitle">
+                FAQs             </h6>
+                        <h2 class="tx-title as-sec-title-2 wa_title_spilt_1">Everything you need to know before getting started.</h2>        </div>
+
+        <div class="as-faqs-2-wrap">
+
+            <!-- left-img -->
+                        <div class="as-faqs-2-img wa-fix wa-img-cover">
+                <img decoding="async" class="wa_parallax_img" src="https://analytixbss.com/technew/wp-content/uploads/2026/05/Artboard-1.jpg" alt="Artboard 1">
+            </div>
+            
+            <!-- faqs-accordion -->
+            <div class="as-faqs-2-accordion">
+                <div class="as-accordion tx-faq-wrapper" id="accordionExample_514">
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-0"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-0">
+                            How long does Odoo implementation take?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-0"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-0"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                Usually, for most businesses, we go from kickoff to go-live in 6 to 8 weeks. However, the exact timeline differs based on the number of modules, the complexity of workflows, and how quickly your team can review and approve everything. After the initial assessment, we will provide you with a realistic estimate.  
+
+                             </p>
+                        </div>
+                    </div>
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-1"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-1">
+                            What does Odoo implementation cost?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-1"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-1"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                The cost depends on scope, which modules you need, whether customization is required, and how much data should be migrated. We don’t publish fixed prices because standard quotes can lead to unexpected costs. Book a free assessment and we’ll provide you with a detailed, itemised proposal.  
+
+                             </p>
+                        </div>
+                    </div>
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-2"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-2">
+                            Can you migrate data from our current system?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-2"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-2"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                Yes. We have transferred data from spreadsheets, QuickBooks, Tally, custom-built systems, and other ERPs. The process includes extracting, cleaning, and validating your data before it ever connects with Odoo. We only move data that is clean and prepared.                              </p>
+                        </div>
+                    </div>
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-3"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-3">
+                            Do you provide training for our team?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-3"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-3"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                Absolutely. Training is part of the implementation process, and we tailor it for each role so that your warehouse staff, sales team, and finance department learn exactly what they need to know. We also provide documentation and can arrange follow-up sessions if necessary.                              </p>
+                        </div>
+                    </div>
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-4"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-4">
+                            What support do you offer after go-live?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-4"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-4"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                We provide ongoing support and maintenance packages that include bug fixes, system updates, new module additions, and general helpdesk assistance. You won’t have to figure things out alone after the project is complete.                             </p>
+                        </div>
+                    </div>
+                                        <div class="as-accordion-item tx-faq-item wa_accordion_item  wow fadeInUp2"  data-wow-delay=".1s">
+                        <button class="item-title tx-faq-header as-h-2 collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-514-5"
+                            aria-expanded="false"
+                            aria-controls="collapse-514-5">
+                            Do we need to be technical to use Odoo?                             <span class="icon tx-faq-icon-right">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                        <div id="collapse-514-5"
+                        class="accordion-collapse collapse tx-faq-body "
+                        aria-labelledby="heading-514-5"
+                        data-bs-parent="#accordionExample_514">
+                            <p class="as-p-2 item-disc tx-faq-content">
+                                No. Odoo is meant for business teams, not developers. After training, most users feel comfortable with their daily tasks within a week. Our role is to set it up in a way that aligns with your team’s existing processes and workflows.                              </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>				</div>
+				</div>
+				</div>
+				</div>
+													<div data-elementor-type="wp-post" data-elementor-id="4317" class="elementor elementor-4317" data-elementor-post-type="tf-footer">
+				<div class="elementor-element elementor-element-b00b9a4 e-con-full footer-home e-flex e-con e-parent" data-id="b00b9a4" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-f2a7bca e-flex e-con-boxed e-con e-child" data-id="f2a7bca" data-element_type="container" data-e-type="container">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-7db651e e-con-full e-flex e-con e-child" data-id="7db651e" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-7536415 elementor-widget elementor-widget-image" data-id="7536415" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+																<a href="https://analytixbss.com/technew">
+							<img width="741" height="153" src="https://analytixbss.com/technew/wp-content/uploads/2026/03/tech-logo.png" class="attachment-full size-full wp-image-1126" alt="tech-logo" srcset="https://analytixbss.com/technew/wp-content/uploads/2026/03/tech-logo.png 741w, https://analytixbss.com/technew/wp-content/uploads/2026/03/tech-logo-300x62.png 300w, https://analytixbss.com/technew/wp-content/uploads/2026/03/tech-logo-600x124.png 600w" sizes="(max-width: 741px) 100vw, 741px" />								</a>
+															</div>
+				<div class="elementor-element elementor-element-7e1b36f elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="7e1b36f" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p>We build safe, smart, and strong digital systems to help your business grow.</p>								</div>
+				<div class="elementor-element elementor-element-5e1a254 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5e1a254" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+							<ul class="elementor-icon-list-items elementor-inline-items">
+							<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="tel:%20+971%2050%20481%203114">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="flaticon flaticon-phone-call"></i>						</span>
+										<span class="elementor-icon-list-text">+971 50 481 3114</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="mailto:%20info@analytixtech.io">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-envelope-open-text"></i>						</span>
+										<span class="elementor-icon-list-text">info@analytixtech.io</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				<div class="elementor-element elementor-element-c021195 e-grid-align-left elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="c021195" data-element_type="widget" data-e-type="widget" data-widget_type="social-icons.default">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-a5d5d51" href="https://www.instagram.com/analytixtech/" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i aria-hidden="true" class="fab fa-instagram"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-ea0c8e2" href="https://www.facebook.com/analytixtechnology" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i aria-hidden="true" class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-9b7eae1" href="https://www.linkedin.com/company/analytix-global" target="_blank">
+						<span class="elementor-screen-only">Linkedin</span>
+						<i aria-hidden="true" class="fab fa-linkedin"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+		<div class="elementor-element elementor-element-479e4c7 e-con-full e-flex e-con e-child" data-id="479e4c7" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-4185c0c elementor-widget elementor-widget-heading" data-id="4185c0c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default">Services</h6>				</div>
+				<div class="elementor-element elementor-element-3aecb66 elementor-widget elementor-widget-heading" data-id="3aecb66" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/our-services/design">Design</a></h6>				</div>
+				<div class="elementor-element elementor-element-b668bf7 elementor-widget elementor-widget-heading" data-id="b668bf7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/our-services/development">Development</a></h6>				</div>
+				<div class="elementor-element elementor-element-33258b1 elementor-widget elementor-widget-heading" data-id="33258b1" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/our-services/marketing">Marketing</a></h6>				</div>
+				</div>
+		<div class="elementor-element elementor-element-ba143c1 e-con-full e-flex e-con e-child" data-id="ba143c1" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-7ea2c28 elementor-widget elementor-widget-heading" data-id="7ea2c28" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default">Solutions</h6>				</div>
+				<div class="elementor-element elementor-element-eafcdab elementor-widget elementor-widget-heading" data-id="eafcdab" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/solutions/odoo-erp-implementation">Odoo ERP Implementation</a></h6>				</div>
+				<div class="elementor-element elementor-element-7a1ccec elementor-widget elementor-widget-heading" data-id="7a1ccec" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/solutions/ai-process-automation">AI Process Automation</a></h6>				</div>
+				<div class="elementor-element elementor-element-fdeeac4 elementor-widget elementor-widget-heading" data-id="fdeeac4" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/solutions/aramco-cybersecurity-compliance">Aramco Cybersecurity Compliance</a></h6>				</div>
+				</div>
+		<div class="elementor-element elementor-element-23dc291 e-con-full e-flex e-con e-child" data-id="23dc291" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-6cb56e7 elementor-widget elementor-widget-heading" data-id="6cb56e7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default">Industries</h6>				</div>
+				<div class="elementor-element elementor-element-07c5399 elementor-widget elementor-widget-heading" data-id="07c5399" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/industries/odoo-for-fnb">Odoo for F&amp;B</a></h6>				</div>
+				<div class="elementor-element elementor-element-baa56bc elementor-widget elementor-widget-heading" data-id="baa56bc" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/industries/odoo-for-logistics">Odoo for Logistics </a></h6>				</div>
+				<div class="elementor-element elementor-element-cdeed3c elementor-widget elementor-widget-heading" data-id="cdeed3c" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/industries/odoo-for-manufacturing">Odoo for Manufacturing </a></h6>				</div>
+				<div class="elementor-element elementor-element-ec6c00e elementor-widget elementor-widget-heading" data-id="ec6c00e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default"><a href="https://analytixbss.com/technew/industries/odoo-for-construction">Odoo for Construction </a></h6>				</div>
+				</div>
+		<div class="elementor-element elementor-element-226d81a e-con-full e-flex e-con e-child" data-id="226d81a" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-8393523 elementor-widget elementor-widget-heading" data-id="8393523" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default">Dubai, UAE</h6>				</div>
+				<div class="elementor-element elementor-element-fd15933 elementor-widget elementor-widget-text-editor" data-id="fd15933" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p><span data-teams="true">#507, Clover Bay Tower, Business Bay, Dubai, UAE</span></p>								</div>
+				<div class="elementor-element elementor-element-51abf49 elementor-widget elementor-widget-heading" data-id="51abf49" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
+					<h6 class="elementor-heading-title elementor-size-default">Riyadh, Saudi Arabia</h6>				</div>
+				<div class="elementor-element elementor-element-1e1ab5c elementor-widget elementor-widget-text-editor" data-id="1e1ab5c" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
+									<p><span data-teams="true"># 703, 7th floor, Futuro Tower King Saud Rd, Riyadh</span></p>								</div>
+				</div>
+					</div>
+				</div>
+				</div>
+				</div>
+						<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/technew/*"},{"not":{"href_matches":["/technew/wp-*.php","/technew/wp-admin/*","/technew/wp-content/uploads/*","/technew/wp-content/*","/technew/wp-content/plugins/*","/technew/wp-content/themes/avista/*","/technew/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<link rel='stylesheet' id='elementor-post-305-css' href='https://analytixbss.com/technew/wp-content/uploads/elementor/css/post-305.css?ver=1791056487' media='all' />
+<link rel='stylesheet' id='elementor-post-4317-css' href='https://analytixbss.com/technew/wp-content/uploads/elementor/css/post-4317.css?ver=1791056488' media='all' />
+<link rel='stylesheet' id='widget-icon-list-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.35.8' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://analytixbss.com/technew/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=3.35.8' media='all' />
+<script id="wp-hooks-js" src="https://analytixbss.com/technew/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
+<script id="wp-i18n-js" src="https://analytixbss.com/technew/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://analytixbss.com/technew/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.5"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/analytixbss.com\/technew\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://analytixbss.com/technew/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.5"></script>
+<script id="bootstrap-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/bootstrap-min.js?ver=7.0.6"></script>
+<script id="swiper-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/swiper.min.js?ver=7.0.6"></script>
+<script id="lenis-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/lenis.min.js?ver=7.0.6"></script>
+<script id="wow-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/wow-min.js?ver=7.0.6"></script>
+<script id="odometer-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/odometer.min.js?ver=7.0.6"></script>
+<script id="nice-select-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/nice-select.min.js?ver=7.0.6"></script>
+<script id="jquery-marquee-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/jquery.marquee.min.js?ver=7.0.6"></script>
+<script id="magnific-popup-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/magnific-popup.min.js?ver=7.0.6"></script>
+<script id="SplitText-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/SplitText.min.js?ver=7.0.6"></script>
+<script id="gsap-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/gsap.min.js?ver=7.0.6"></script>
+<script id="customEase-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/customEase.min.js?ver=7.0.6"></script>
+<script id="appear-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/appear.js?ver=7.0.6"></script>
+<script id="scrollTrigger-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/scrollTrigger.min.js?ver=7.0.6"></script>
+<script id="pixi-min-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/pixi.min.js?ver=7.0.6"></script>
+<script id="cursor-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/cursor.js?ver=7.0.6"></script>
+<script id="touchspin-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/touchspin.js?ver=7.0.6"></script>
+<script id="avista-custom-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/avista-custom.js?ver=7.0.6"></script>
+<script id="avista-core-js" src="https://analytixbss.com/technew/wp-content/themes/avista/assets/js/avista-core.js?ver=1.0.1"></script>
+<script id="elementor-webpack-runtime-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.35.8"></script>
+<script id="elementor-frontend-modules-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.35.8"></script>
+<script id="jquery-ui-core-js" src="https://analytixbss.com/technew/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.35.8","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"container":true,"e_optimized_markup":true,"theme_builder_v2":true,"e_pro_free_trial_popup":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"e_components":true,"e_interactions":true,"e_editor_one":true,"import-export-customization":true,"mega-menu":true,"e_pro_variables":true},"urls":{"assets":"https:\/\/analytixbss.com\/technew\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/analytixbss.com\/technew\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/analytixbss.com\/technew\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"0623948db4"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":1724,"title":"Odoo%20ERP%20Implementation%20%E2%80%93%20Analytix","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script id="elementor-frontend-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.35.8"></script>
+<script id="elementor-pro-webpack-runtime-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.35.1"></script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/analytixbss.com\/technew\/wp-admin\/admin-ajax.php","nonce":"a5171ad113","urls":{"assets":"https:\/\/analytixbss.com\/technew\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/analytixbss.com\/technew\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/analytixbss.com\/technew\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script id="elementor-pro-frontend-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.35.1"></script>
+<script id="pro-elements-handlers-js" src="https://analytixbss.com/technew/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.35.1"></script>
+<script id="elh-element-helper-js" src="https://analytixbss.com/technew/wp-content/plugins/avista-core/assets/js/elh-element.js?ver=1.0.3"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://analytixbss.com/technew/wp-includes/js/wp-emoji-release.min.js?ver=7.0.6"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://analytixbss.com/technew/wp-includes/js/wp-emoji-loader.min.js
+</script>
+        </div>
+    </body>
+</html>
+
+
+<!-- Page supported by LiteSpeed Cache 7.8.1 on 2026-10-05 10:12:19 -->

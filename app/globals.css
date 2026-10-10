@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #03060D;
+    --bg-secondary: #071426;
+    --bg-card: #0A1930;
+    --color-primary-blue: #1677FF;
+    --color-electric-blue: #168BFF;
+    --color-border: rgba(72, 139, 255, 0.24);
+    --text-primary: #F5F8FF;
+    --text-secondary: #96A8C2;
+    --color-accent: #38D9C8;
+    --card-radius: 22px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--text-primary);
+    background: #03060D;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+    background: #03060D;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-space-grotesk), sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Glassmorphism card utilities */
+.glass-card {
+  background: rgba(10, 25, 48, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(72, 139, 255, 0.24);
+  border-radius: 22px;
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(10, 25, 48, 0.88);
+  border-color: rgba(22, 139, 255, 0.55);
+  box-shadow: 0 20px 45px rgba(3, 6, 13, 0.8), 0 0 35px rgba(22, 139, 255, 0.22);
+}
+
+/* Gradient headline text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #F5F8FF 40%, #96A8C2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #FFFFFF 20%, #93c5fd 60%, #1677FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03060D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(22, 119, 255, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 139, 255, 0.7);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .icon-animate,
+  .icon-floating,
+  .card-icon,
+  .card-arrow,
+  .service-icon,
+  .service-arrow {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM SUBTLE ICON ANIMATION SYSTEM
+   ========================================================================== */
+@keyframes iconReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes iconPulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(197, 139, 255, 0));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 8px rgba(197, 139, 255, 0.4));
+  }
+}
+
+@keyframes checkmarkPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  70% {
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes iconArrowShift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes svgStrokeDraw {
+  from {
+    stroke-dashoffset: 60;
+    opacity: 0.6;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Reusable icon base classes */
+.icon-animate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.32s ease;
+  will-change: transform;
+}
+
+.icon-animate:hover {
+  transform: translateY(-3px) scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(197, 139, 255, 0.4));
+}
+
+.icon-floating {
+  animation: iconFloat 4.2s ease-in-out infinite;
+}
+
+/* Card hover synergy: service, industry & feature cards */
+.group:hover .card-icon,
+.group:hover .service-icon,
+.tilt-card:hover .card-icon {
+  transform: translateY(-4px) scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(197, 139, 255, 0.45));
+}
+
+.group:hover .card-arrow,
+.group:hover .service-arrow,
+.tilt-card:hover .card-arrow {
+  transform: translateX(5px);
+  filter: drop-shadow(0 0 8px rgba(197, 139, 255, 0.35));
+}
+
+/* Specific icon utility nuances */
+.icon-arrow {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icon-check {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.25s ease;
+}
+
+.icon-check:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.45));
+}
+
+.icon-stat {
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+.icon-stat:hover {
+  transform: scale(1.1) translateY(-2px);
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+}
+
+.icon-cta {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icon-cta:hover {
+  transform: translateX(3px) translateY(-1px) scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(197, 139, 255, 0.5));
+}
+
+.icon-nav {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icon-nav:hover {
+  transform: scale(1.08) rotate(3deg);
+  filter: drop-shadow(0 0 8px rgba(197, 139, 255, 0.35));
+}
+
+.icon-social {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icon-social:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(197, 139, 255, 0.4));
+}
+
+/* Subtle line-based SVG stroke reveal */
+.svg-line-reveal {
+  stroke-dasharray: 60;
+  animation: svgStrokeDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile responsive adjustments: dampened distance & glow */
+@media (max-width: 640px) {
+  .icon-animate:hover,
+  .group:hover .card-icon,
+  .group:hover .service-icon {
+    transform: translateY(-2px) scale(1.04);
+    filter: drop-shadow(0 0 6px rgba(197, 139, 255, 0.3));
+  }
+
+  .group:hover .card-arrow,
+  .group:hover .service-arrow {
+    transform: translateX(3px);
+  }
+
+  .icon-floating {
+    animation: iconFloat 5s ease-in-out infinite;
+  }
+}
+
+/* ==========================================================================
+   3D HERO INTERACTIVE STAGE & POLYHEDRON STYLES
+   ========================================================================== */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
