@@ -15,7 +15,6 @@ import HeroLightingFlare from "@/components/hero/HeroLightingFlare";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import MagneticButton from "@/components/MagneticButton";
-import Marquee from "@/components/Marquee";
 import StatsReveal from "@/components/StatsReveal";
 import SectionHeading from "@/components/SectionHeading";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
@@ -27,7 +26,6 @@ import ProductIntro from "@/components/sections/ProductIntro";
 import ArchitectureSection from "@/components/sections/ArchitectureSection";
 import AutomationWorkflowSection from "@/components/sections/AutomationWorkflowSection";
 import CyberSecuritySection from "@/components/sections/CyberSecuritySection";
-import AIMarketingSection from "@/components/sections/AIMarketingSection";
 import IndustrySolutionsSection from "@/components/sections/IndustrySolutionsSection";
 import ProductComparisonSection from "@/components/sections/ProductComparisonSection";
 import TransformationSection from "@/components/sections/TransformationSection";
@@ -50,18 +48,13 @@ export default function HomePage() {
         {/* Cinematic Electric-Blue Lighting Flare & Light Rays matching Reference Image */}
         <HeroLightingFlare />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 w-full">
           <HeroProductStage />
         </div>
       </section>
 
       {/* =====================================================================
-          2. MARQUEE STRIP
-          ===================================================================== */}
-      <Marquee speed={32} />
-
-      {/* =====================================================================
-          3. PRODUCTS: AI ERP & AI 360 ODOO
+          2. PRODUCTS: AI ERP & AI 360 ODOO
           ===================================================================== */}
       <ProductIntro />
 
@@ -87,12 +80,7 @@ export default function HomePage() {
       <CyberSecuritySection />
 
       {/* =====================================================================
-          8. CAPABILITY 03: AI-BASED MARKETING INTELLIGENCE
-          ===================================================================== */}
-      <AIMarketingSection />
-
-      {/* =====================================================================
-          9. INDUSTRIES: GCC SECTOR SOLUTIONS
+          8. INDUSTRIES: GCC SECTOR SOLUTIONS
           ===================================================================== */}
       <IndustrySolutionsSection />
 

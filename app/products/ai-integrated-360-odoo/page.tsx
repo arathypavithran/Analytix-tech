@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI-Integrated 360 Odoo | Analytix BSS",
+  title: "AI Integrated 360, Odoo | Analytix BSS",
   description:
     "Experience Odoo as an Intelligent Business Platform. Go beyond standard ERP with AI-enhanced Odoo workflows, automation, analytics and connected business operations.",
 };

@@ -54,7 +54,7 @@ export default function ProductsPage() {
                   </div>
 
                   <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
-                    AI-Integrated ERP Solution
+                    AI Integrated ERP Solution
                   </h2>
 
                   <p className="text-sm sm:text-base text-[#b9b4cc] leading-relaxed mb-6">
@@ -104,7 +104,7 @@ export default function ProductsPage() {
                   </div>
 
                   <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
-                    AI-Integrated 360 Odoo
+                    AI Integrated 360, Odoo
                   </h2>
 
                   <p className="text-sm sm:text-base text-[#b9b4cc] leading-relaxed mb-6">

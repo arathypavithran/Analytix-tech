@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles, Layers } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import PioneeringTechIllustration from "./connected-intelligence/PioneeringTechIllustration";
 import CustomSolutionsIllustration from "./connected-intelligence/CustomSolutionsIllustration";
 import NicheFocusIllustration from "./connected-intelligence/NicheFocusIllustration";
 import CyberSecurityIllustration from "./connected-intelligence/CyberSecurityIllustration";
-import AIMarketingIllustration from "./connected-intelligence/AIMarketingIllustration";
+import SeamlessIntegrationIllustration from "./connected-intelligence/SeamlessIntegrationIllustration";
+import InnovationPartnerIllustration from "./connected-intelligence/InnovationPartnerIllustration";
 
 export default function ProductIntro() {
   return (
@@ -102,6 +103,32 @@ export default function ProductIntro() {
             />
 
             {/* =================================================================
+                HEADING: OUR PRODUCTS
+                ================================================================= */}
+            <div className="relative mb-6 sm:mb-8 px-2 sm:px-4 pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-white/[0.08]">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#168BFF]/40 bg-[#1677FF]/15 px-3.5 py-1 text-[11px] font-mono font-bold tracking-wider text-[#168BFF] uppercase mb-2.5 shadow-[0_0_20px_rgba(22,139,255,0.25)]">
+                    <Sparkles className="h-3.5 w-3.5 text-[#168BFF]" />
+                    <span>OUR PRODUCTS</span>
+                    <span className="text-white/30">/</span>
+                    <span className="text-[#38D9C8]">2 CORE PLATFORMS</span>
+                  </div>
+                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    Enterprise AI Products
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#96A8C2] mt-1.5 max-w-xl">
+                    Autonomous, scalable enterprise platforms engineered as your core operational foundation.
+                  </p>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#38D9C8] pb-1">
+                  <span className="h-2 w-2 rounded-full bg-[#38D9C8] animate-pulse" />
+                  <span>Autonomous Operating Layer</span>
+                </div>
+              </div>
+            </div>
+
+            {/* =================================================================
                 FIRST ROW: 2 LARGE HORIZONTAL CARDS (PRODUCTS)
                 ================================================================= */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 mb-3 sm:mb-4 lg:mb-5">
@@ -124,7 +151,7 @@ export default function ProductIntro() {
                   </div>
 
                   <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#F5F8FF] mb-2.5 tracking-tight group-hover:text-white transition-colors">
-                    Ai Integrated ERP Solution
+                    AI Integrated ERP Solution
                   </h3>
                   <p className="text-sm sm:text-base text-[#96A8C2] leading-relaxed mb-4">
                     An intelligent ERP environment designed to connect core business operations, automate repetitive workflows, and transform enterprise data into predictive, actionable intelligence.
@@ -177,35 +204,66 @@ export default function ProductIntro() {
             </div>
 
             {/* =================================================================
-                SECOND ROW: 3 VERTICAL CARDS (SERVICES)
+                DIVIDER & HEADING: OUR SERVICES
                 ================================================================= */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
-              {/* CARD 03: AI Process Automation */}
-              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#168BFF]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(22,139,255,0.15)] hover:-translate-y-1">
+            <div className="relative mt-10 sm:mt-14 mb-6 sm:mb-8 px-2 sm:px-4 pt-8 border-t border-white/[0.12]">
+              {/* Subtle accent glow line along divider */}
+              <div className="pointer-events-none absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-[#38D9C8]/40 to-transparent shadow-[0_0_12px_#38D9C8]" />
+
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-white/[0.08]">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#38D9C8]/40 bg-[#38D9C8]/15 px-3.5 py-1 text-[11px] font-mono font-bold tracking-wider text-[#38D9C8] uppercase mb-2.5 shadow-[0_0_20px_rgba(56,217,200,0.25)]">
+                    <Layers className="h-3.5 w-3.5 text-[#38D9C8]" />
+                    <span>OUR SERVICES</span>
+                    <span className="text-white/30">/</span>
+                    <span className="text-[#a78bfa]">4 CAPABILITY SQUADS</span>
+                  </div>
+                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    Specialized Engineering Services
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#96A8C2] mt-1.5 max-w-xl">
+                    Specialized technical units engineered to automate processes, sovereign-defend systems, deploy ERP, and design brand interfaces.
+                  </p>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-[#a78bfa] pb-1">
+                  <span className="h-2 w-2 rounded-full bg-[#a78bfa] animate-pulse" />
+                  <span>Multidisciplinary Technical Squads</span>
+                </div>
+              </div>
+            </div>
+
+            {/* =================================================================
+                SECOND ROW: 4 VERTICAL CARDS (SERVICES)
+                ================================================================= */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+              {/* CARD 01: AI Process Automation */}
+              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-5 sm:p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#168BFF]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(22,139,255,0.15)] hover:-translate-y-1">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-                <div className="w-full h-[180px] sm:h-[200px] flex items-center justify-center mb-5">
+                <div className="w-full h-[150px] sm:h-[170px] flex items-center justify-center mb-4">
                   <NicheFocusIllustration />
                 </div>
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[11px] font-mono font-bold text-[#168BFF] uppercase tracking-wider">
-                      SERVICE 01
-                    </span>
-                    <span className="text-[11px] text-[#96A8C2]/60 font-mono">· WORKFLOWS</span>
-                  </div>
+                <div className="relative z-10 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono font-bold text-[#168BFF] uppercase tracking-wider">
+                        SERVICE 01
+                      </span>
+                      <span className="text-[11px] text-[#96A8C2]/60 font-mono">· WORKFLOWS</span>
+                    </div>
 
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#F5F8FF] mb-2.5 tracking-tight group-hover:text-white transition-colors">
-                    AI Process Automation
-                  </h3>
-                  <p className="text-sm text-[#96A8C2] leading-relaxed mb-4">
-                    Autonomous LLM triggers, document intelligence, and cross-platform API workflows that eliminate repetitive friction and manual bottlenecks.
-                  </p>
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-[#F5F8FF] mb-2 tracking-tight group-hover:text-white transition-colors">
+                      AI Process Automation
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#96A8C2] leading-relaxed mb-4">
+                      Autonomous LLM triggers, document intelligence, and cross-platform API workflows that eliminate repetitive friction and manual bottlenecks.
+                    </p>
+                  </div>
 
                   <Link
                     href="/services/ai-process-automation"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#168BFF] hover:text-[#38D9C8] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#168BFF] hover:text-[#38D9C8] transition-colors pt-2"
                   >
                     <span>Explore Automation</span>
                     <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
@@ -213,32 +271,34 @@ export default function ProductIntro() {
                 </div>
               </div>
 
-              {/* CARD 04: Cyber Security */}
-              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#168BFF]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(22,139,255,0.15)] hover:-translate-y-1">
+              {/* CARD 02: Cyber Security */}
+              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-5 sm:p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#38D9C8]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(56,217,200,0.15)] hover:-translate-y-1">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-                <div className="w-full h-[180px] sm:h-[200px] flex items-center justify-center mb-5">
+                <div className="w-full h-[150px] sm:h-[170px] flex items-center justify-center mb-4">
                   <CyberSecurityIllustration />
                 </div>
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[11px] font-mono font-bold text-[#38D9C8] uppercase tracking-wider">
-                      SERVICE 02
-                    </span>
-                    <span className="text-[11px] text-[#96A8C2]/60 font-mono">· SOVEREIGN SHIELD</span>
-                  </div>
+                <div className="relative z-10 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono font-bold text-[#38D9C8] uppercase tracking-wider">
+                        SERVICE 02
+                      </span>
+                      <span className="text-[11px] text-[#96A8C2]/60 font-mono">· SOVEREIGN SHIELD</span>
+                    </div>
 
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#F5F8FF] mb-2.5 tracking-tight group-hover:text-white transition-colors">
-                    Cyber Security
-                  </h3>
-                  <p className="text-sm text-[#96A8C2] leading-relaxed mb-4">
-                    Proactive perimeter defense, Aramco SCCC compliance, zero-trust access control, and 24/7 AI-driven threat monitoring for resilient operations.
-                  </p>
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-[#F5F8FF] mb-2 tracking-tight group-hover:text-white transition-colors">
+                      Cyber Security
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#96A8C2] leading-relaxed mb-4">
+                      Proactive perimeter defense, Aramco SCCC compliance, zero-trust access control, and 24/7 AI-driven threat monitoring for resilient operations.
+                    </p>
+                  </div>
 
                   <Link
                     href="/services/cyber-security"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#38D9C8] hover:text-[#168BFF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#38D9C8] hover:text-[#168BFF] transition-colors pt-2"
                   >
                     <span>Explore Cyber Defense</span>
                     <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
@@ -246,34 +306,71 @@ export default function ProductIntro() {
                 </div>
               </div>
 
-              {/* CARD 05: AI Based Marketing */}
-              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#38D9C8]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(56,217,200,0.15)] hover:-translate-y-1">
+              {/* CARD 03: ERP Implementation */}
+              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-5 sm:p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#a78bfa]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(167,139,250,0.15)] hover:-translate-y-1">
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-                <div className="w-full h-[180px] sm:h-[200px] flex items-center justify-center mb-5">
-                  <AIMarketingIllustration />
+                <div className="w-full h-[150px] sm:h-[170px] flex items-center justify-center mb-4">
+                  <SeamlessIntegrationIllustration />
                 </div>
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[11px] font-mono font-bold text-[#168BFF] uppercase tracking-wider">
-                      SERVICE 03
-                    </span>
-                    <span className="text-[11px] text-[#96A8C2]/60 font-mono">· GROWTH AI</span>
+                <div className="relative z-10 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono font-bold text-[#a78bfa] uppercase tracking-wider">
+                        SERVICE 03
+                      </span>
+                      <span className="text-[11px] text-[#96A8C2]/60 font-mono">· OPERATIONAL CORE</span>
+                    </div>
+
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-[#F5F8FF] mb-2 tracking-tight group-hover:text-white transition-colors">
+                      ERP Implementation
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#96A8C2] leading-relaxed mb-4">
+                      End-to-end Odoo ERP deployment, custom module engineering, zero-loss data migration, and seamless third-party gateway integrations.
+                    </p>
                   </div>
 
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#F5F8FF] mb-2.5 tracking-tight group-hover:text-white transition-colors">
-                    AI based marketing
-                  </h3>
-                  <p className="text-sm text-[#96A8C2] leading-relaxed mb-4">
-                    Predictive campaign intelligence, autonomous lead scoring, real-time ROI attribution, and dynamic audience engagement across digital channels.
-                  </p>
+                  <Link
+                    href="/services/erp-implementation"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#a78bfa] hover:text-[#38D9C8] transition-colors pt-2"
+                  >
+                    <span>Explore ERP Services</span>
+                    <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* CARD 04: Digital Branding */}
+              <div className="group relative rounded-[22px] sm:rounded-[26px] border border-white/[0.08] bg-gradient-to-b from-[#0F1420]/80 via-[#0A0D16]/90 to-[#07090F]/95 p-5 sm:p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-[#f59e0b]/40 hover:shadow-[0_15px_40px_rgba(2,4,8,0.9),0_0_30px_rgba(245,158,11,0.15)] hover:-translate-y-1">
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+                <div className="w-full h-[150px] sm:h-[170px] flex items-center justify-center mb-4">
+                  <InnovationPartnerIllustration />
+                </div>
+
+                <div className="relative z-10 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono font-bold text-[#f59e0b] uppercase tracking-wider">
+                        SERVICE 04
+                      </span>
+                      <span className="text-[11px] text-[#96A8C2]/60 font-mono">· BRAND IDENTITY</span>
+                    </div>
+
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-[#F5F8FF] mb-2 tracking-tight group-hover:text-white transition-colors">
+                      Digital Branding
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#96A8C2] leading-relaxed mb-4">
+                      Strategic brand identity, premium UI/UX design systems, and conversion-focused digital experiences that command market attention.
+                    </p>
+                  </div>
 
                   <Link
-                    href="/services/ai-marketing"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#168BFF] hover:text-[#38D9C8] transition-colors"
+                    href="/services/digital-branding"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#f59e0b] hover:text-[#38D9C8] transition-colors pt-2"
                   >
-                    <span>Explore Marketing AI</span>
+                    <span>Explore Branding</span>
                     <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>

@@ -65,18 +65,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Services */}
+          {/* Column 2: Products */}
           <div>
             <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">
-              Services
+              Products
             </h4>
             <ul className="flex flex-col gap-3 text-sm text-[#b9b4cc]">
               <li>
                 <Link
-                  href="/design"
+                  href="/products/ai-integrated-erp"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
-                  <span>Design & UI/UX</span>
+                  <span>AI Integrated ERP Solution</span>
                   <AnimatedIcon type="arrow" glowColor="purple">
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
                   </AnimatedIcon>
@@ -84,43 +84,21 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/development"
+                  href="/products/ai-integrated-360-odoo"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
-                  <span>Development & CRM</span>
-                  <AnimatedIcon type="arrow" glowColor="purple">
+                  <span>AI Integrated 360, Odoo</span>
+                  <AnimatedIcon type="arrow" glowColor="cyan">
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
                   </AnimatedIcon>
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/marketing"
+                  href="/products"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
-                  <span>Marketing & CRO</span>
-                  <AnimatedIcon type="arrow" glowColor="purple">
-                    <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
-                  </AnimatedIcon>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Who We Are</span>
-                  <AnimatedIcon type="arrow" glowColor="purple">
-                    <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
-                  </AnimatedIcon>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Articles & Insights</span>
+                  <span>All Products Overview</span>
                   <AnimatedIcon type="arrow" glowColor="purple">
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
                   </AnimatedIcon>
@@ -129,26 +107,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Solutions */}
+          {/* Column 3: Services */}
           <div>
             <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">
-              Solutions
+              Services
             </h4>
             <ul className="flex flex-col gap-3 text-sm text-[#b9b4cc]">
               <li>
                 <Link
-                  href="/odoo-erp"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Odoo ERP Implementation</span>
-                  <AnimatedIcon type="arrow" glowColor="purple">
-                    <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
-                  </AnimatedIcon>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ai-automation"
+                  href="/services/ai-process-automation"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
                   <span>AI Process Automation</span>
@@ -159,10 +126,21 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/aramco-compliance"
+                  href="/services/cyber-security"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
-                  <span>Aramco Cybersecurity</span>
+                  <span>Cyber Security</span>
+                  <AnimatedIcon type="arrow" glowColor="cyan">
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
+                  </AnimatedIcon>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/erp-implementation"
+                  className="hover:text-white transition-colors flex items-center justify-between group"
+                >
+                  <span>ERP Implementation</span>
                   <AnimatedIcon type="arrow" glowColor="purple">
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
                   </AnimatedIcon>
@@ -170,13 +148,21 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/services/digital-branding"
                   className="hover:text-white transition-colors flex items-center justify-between group"
                 >
-                  <span>Free Strategy Call</span>
-                  <AnimatedIcon type="arrow" glowColor="purple">
+                  <span>Digital Branding</span>
+                  <AnimatedIcon type="arrow" glowColor="amber">
                     <ArrowUpRight className="h-3.5 w-3.5 opacity-60 -translate-x-0.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:-translate-y-0.5" />
                   </AnimatedIcon>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors flex items-center justify-between group text-xs text-[#06b6d4] pt-1"
+                >
+                  <span>All Capabilities →</span>
                 </Link>
               </li>
             </ul>
@@ -215,9 +201,7 @@ export default function Footer() {
             <Link href="/about" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Contact
-            </Link>
+
           </div>
         </div>
       </div>

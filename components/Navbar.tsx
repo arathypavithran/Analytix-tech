@@ -10,17 +10,12 @@ import {
   Menu,
   X,
   ArrowRight,
-  Phone,
   Layers,
   Cpu,
   Bot,
   Shield,
-  TrendingUp,
-  Utensils,
-  Truck,
-  Factory,
-  Building2,
-  Briefcase,
+  Boxes,
+  Palette,
   Sparkles,
 } from "lucide-react";
 import AnimatedIcon from "./AnimatedIcon";
@@ -29,7 +24,7 @@ import MagneticButton from "./MagneticButton";
 
 const PRODUCT_ITEMS = [
   {
-    title: "AI-Integrated ERP Solution",
+    title: "AI Integrated ERP Solution",
     desc: "Predictive core enterprise ERP with autonomous operations",
     href: "/products/ai-integrated-erp",
     icon: Layers,
@@ -37,7 +32,7 @@ const PRODUCT_ITEMS = [
     glowColor: "#1677FF",
   },
   {
-    title: "AI-Integrated 360 Odoo",
+    title: "AI Integrated 360, Odoo",
     desc: "Intelligent 360° modular platform powered by AI workflows",
     href: "/products/ai-integrated-360-odoo",
     icon: Cpu,
@@ -64,47 +59,24 @@ const SERVICE_ITEMS = [
     glowColor: "#22d3ee",
   },
   {
-    title: "AI-Based Marketing",
-    desc: "Predictive campaign intelligence, lead scoring & revenue attribution",
-    href: "/services/ai-marketing",
-    icon: TrendingUp,
+    title: "ERP Implementation",
+    desc: "End-to-end Odoo ERP setup, custom modules & enterprise data migration",
+    href: "/services/erp-implementation",
+    icon: Boxes,
     badge: "Service 03",
     glowColor: "#a78bfa",
   },
+  {
+    title: "Digital Branding",
+    desc: "Strategic brand identity, UI/UX design systems & visual storytelling",
+    href: "/services/digital-branding",
+    icon: Palette,
+    badge: "Service 04",
+    glowColor: "#f59e0b",
+  },
 ];
 
-const INDUSTRY_ITEMS = [
-  {
-    title: "Food & Beverage",
-    desc: "Recipe cost control, central kitchen sync & batch traceability",
-    href: "/#industries",
-    icon: Utensils,
-  },
-  {
-    title: "Logistics & Supply Chain",
-    desc: "Fleet tracking, automated customs & multi-warehouse routing",
-    href: "/#industries",
-    icon: Truck,
-  },
-  {
-    title: "Manufacturing",
-    desc: "BOM variance, shop floor automation & preventative maintenance",
-    href: "/#industries",
-    icon: Factory,
-  },
-  {
-    title: "Construction",
-    desc: "Subcontractor claims, job costing & machinery telemetry",
-    href: "/#industries",
-    icon: Building2,
-  },
-  {
-    title: "Professional Services",
-    desc: "Billable utilization, multi-entity consolidation & SLA alerts",
-    href: "/#industries",
-    icon: Briefcase,
-  },
-];
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -206,7 +178,6 @@ export default function Navbar() {
                       : "text-[#b9b4cc]"
                   }`}
                 >
-                  <Sparkles className="h-3.5 w-3.5 text-[#06b6d4]" />
                   <span>Products</span>
                   <AnimatedIcon type="nav">
                     <ChevronDown
@@ -379,100 +350,11 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* Industries Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown("industries")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  type="button"
-                  aria-expanded={activeDropdown === "industries"}
-                  className="flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-full hover:text-white text-[#b9b4cc]"
-                >
-                  <span>Industries</span>
-                  <AnimatedIcon type="nav">
-                    <ChevronDown
-                      className={`h-4 w-4 transition-transform duration-200 ${
-                        activeDropdown === "industries" ? "rotate-180 text-[#c58bff]" : ""
-                      }`}
-                    />
-                  </AnimatedIcon>
-                </button>
 
-                <AnimatePresence>
-                  {activeDropdown === "industries" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                      transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                      className="absolute top-full left-0 mt-2 w-[390px] rounded-2xl border border-[rgba(72,139,255,0.24)] bg-[#071426]/95 backdrop-blur-2xl p-3 shadow-[0_25px_60px_rgba(3,6,13,0.85)]"
-                    >
-                      <div className="px-3 pt-2 pb-1.5 flex items-center justify-between text-[11px] font-mono text-[#168BFF] tracking-wider uppercase border-b border-[rgba(72,139,255,0.15)] mb-2">
-                        <span>GCC SECTOR SPECIALIZATIONS</span>
-                        <span className="text-white/40">DUBAI · RIYADH</span>
-                      </div>
-                      {INDUSTRY_ITEMS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={item.title}
-                            href={item.href}
-                            className="group flex items-start gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-white/[0.07]"
-                          >
-                            <div className="h-8 w-8 shrink-0 rounded-lg bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#c58bff] group-hover:border-[#c58bff]/50 transition-colors">
-                              <Icon className="h-4 w-4" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <span className="text-sm font-medium text-white group-hover:text-[#c58bff] block transition-colors">
-                                {item.title}
-                              </span>
-                              <span className="text-xs text-[#b9b4cc] line-clamp-1 block">
-                                {item.desc}
-                              </span>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              <Link
-                href="/blog"
-                className={`px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-full hover:text-white ${
-                  pathname === "/blog" ? "text-white bg-white/[0.08]" : "text-[#b9b4cc]"
-                }`}
-              >
-                Insights
-              </Link>
-
-              <Link
-                href="/contact"
-                className={`px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-full hover:text-white ${
-                  pathname === "/contact" ? "text-white bg-white/[0.08]" : "text-[#b9b4cc]"
-                }`}
-              >
-                Contact
-              </Link>
             </nav>
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-4">
-              <a
-                href={SITE_CONFIG.whatsAppUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[#b9b4cc] hover:text-white transition-colors"
-              >
-                <AnimatedIcon type="cta" glowColor="green">
-                  <Phone className="h-3.5 w-3.5 text-[#25D366]" />
-                </AnimatedIcon>
-                <span>Dubai · Riyadh</span>
-              </a>
-
               <MagneticButton href="/contact" variant="primary" className="!py-2.5 !px-5 !text-sm">
                 <span>Talk to an Expert</span>
               </MagneticButton>
@@ -587,48 +469,7 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Mobile Industries Accordion */}
-              <div className="py-2 border-b border-white/[0.08]">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileGroup("industries")}
-                  className="flex items-center justify-between w-full text-lg font-semibold text-white text-left"
-                >
-                  <span>Industries</span>
-                  <ChevronDown
-                    className={`h-5 w-5 transition-transform ${
-                      mobileExpanded === "industries" ? "rotate-180 text-[#c58bff]" : ""
-                    }`}
-                  />
-                </button>
-                {mobileExpanded === "industries" && (
-                  <div className="pl-4 pt-3 flex flex-col gap-2.5">
-                    {INDUSTRY_ITEMS.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        className="text-sm text-[#b9b4cc] hover:text-white py-0.5"
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
 
-              <Link
-                href="/blog"
-                className="text-lg font-semibold text-white py-2 border-b border-white/[0.08]"
-              >
-                Insights
-              </Link>
-
-              <Link
-                href="/contact"
-                className="text-lg font-semibold text-white py-2 border-b border-white/[0.08]"
-              >
-                Contact
-              </Link>
             </div>
 
             <div className="pt-8 flex flex-col gap-4">

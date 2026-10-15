@@ -82,7 +82,7 @@ export const SITE_CONFIG = {
   tagline: "AI ERP & Intelligent Business Solutions",
   heroTag: "AI-Powered Business Technology · Dubai · Riyadh",
   description:
-    "Analytix BSS delivers AI-integrated ERP, AI-powered Odoo, process automation, cybersecurity and intelligent marketing solutions for modern businesses.",
+    "Analytix BSS delivers AI-integrated ERP, AI-powered Odoo, process automation, cybersecurity, ERP implementation and digital branding solutions for modern businesses.",
   phone: "+971 50 481 3114",
   phoneRaw: "+971504813114",
   whatsAppUrl: "https://wa.me/971504813114",
@@ -741,7 +741,7 @@ export const AI_HERO_TABS: AIHeroTab[] = [
     badge: "02",
     label: "AI ODOO",
     tag: "PRODUCT 02 // 360° PLATFORM",
-    headline: "AI-Integrated 360 Odoo",
+    headline: "AI Integrated 360, Odoo",
     subheadline:
       "Turn Odoo into an intelligent operating layer with automation, analytics and AI-powered workflows customized for high-scale enterprise operations.",
     ctaText: "Explore 360 Odoo",
@@ -776,17 +776,30 @@ export const AI_HERO_TABS: AIHeroTab[] = [
     coreHighlight: ["SECURITY", "AI", "ERP"],
   },
   {
-    id: "ai-marketing",
+    id: "erp-implementation",
     badge: "05",
-    label: "AI MARKETING",
-    tag: "CAPABILITY 03 // INTELLIGENT GROWTH",
-    headline: "Marketing Intelligence That Learns",
+    label: "ERP",
+    tag: "CAPABILITY 03 // OPERATIONAL BACKBONE",
+    headline: "End-to-End ERP Implementation",
     subheadline:
-      "Use AI-powered insights, automation and personalization to improve multi-channel campaigns, lead acquisition, and conversion velocity.",
-    ctaText: "Explore AI Marketing",
-    ctaHref: "/services/ai-marketing",
-    accentColor: "#c58bff",
-    coreHighlight: ["MARKETING", "ANALYTICS", "CRM"],
+      "Deploy, configure, and scale Odoo ERP with custom modules, data migration, and seamless third-party integrations tailored for GCC enterprises.",
+    ctaText: "Explore ERP Services",
+    ctaHref: "/services/erp-implementation",
+    accentColor: "#a78bfa",
+    coreHighlight: ["ERP", "ODOO", "MODULES", "MIGRATION"],
+  },
+  {
+    id: "digital-branding",
+    badge: "06",
+    label: "BRANDING",
+    tag: "CAPABILITY 04 // BRAND IDENTITY",
+    headline: "Digital Branding That Commands Attention",
+    subheadline:
+      "Build a distinctive brand identity with premium UI/UX design systems, visual storytelling, and conversion-focused digital experiences.",
+    ctaText: "Explore Digital Branding",
+    ctaHref: "/services/digital-branding",
+    accentColor: "#f59e0b",
+    coreHighlight: ["DESIGN", "BRAND", "UI/UX", "CRO"],
   },
 ];
 
@@ -807,7 +820,7 @@ export const FEATURED_PRODUCTS: ProductItem[] = [
   {
     id: "ai-integrated-erp",
     badge: "PRODUCT 01",
-    title: "AI-Integrated ERP Solution",
+    title: "AI Integrated ERP Solution",
     tagline: "Autonomous Enterprise Resource Planning",
     description:
       "An intelligent ERP environment designed to connect core business operations, automate repetitive workflows and turn business data into actionable insights.",
@@ -820,7 +833,7 @@ export const FEATURED_PRODUCTS: ProductItem[] = [
   {
     id: "ai-integrated-360-odoo",
     badge: "PRODUCT 02",
-    title: "AI-Integrated 360 Odoo",
+    title: "AI Integrated 360, Odoo",
     tagline: "Connected 360° Operational Intelligence",
     description:
       "An AI-enhanced Odoo ecosystem that connects business functions, automates workflows and gives leadership teams a complete 360° operational view.",
@@ -864,14 +877,24 @@ export const SUPPORTING_SERVICES: SupportingService[] = [
     capabilities: ["Continuous Threat Monitoring", "SCCC / CCC Preparedness", "Zero-Trust Architecture", "Vulnerability Assessments"],
   },
   {
-    id: "ai-marketing",
+    id: "erp-implementation",
     badge: "SERVICE 03",
-    title: "AI-Based Marketing Intelligence",
+    title: "ERP Implementation",
     description:
-      "Drive qualified enterprise pipeline with machine-learning audience segmentation, predictive content engines, and CRO telemetry.",
-    href: "/services/ai-marketing",
-    iconName: "TrendingUp",
-    capabilities: ["Predictive Lead Scoring", "Algorithmic Ad Optimization", "Content Personalization", "Revenue Attribution"],
+      "End-to-end Odoo ERP deployment, custom module engineering, data migration, and third-party integrations for enterprise operations.",
+    href: "/services/erp-implementation",
+    iconName: "Boxes",
+    capabilities: ["Odoo Setup & Configuration", "Custom Module Development", "Legacy Data Migration", "Third-Party Integrations"],
+  },
+  {
+    id: "digital-branding",
+    badge: "SERVICE 04",
+    title: "Digital Branding",
+    description:
+      "Strategic brand identity, premium UI/UX design systems, and conversion-focused digital experiences that command market attention.",
+    href: "/services/digital-branding",
+    iconName: "Palette",
+    capabilities: ["Brand Identity Systems", "UI/UX Design", "Web & Mobile Experiences", "Marketing Creative Assets"],
   },
 ];
 

@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI-Integrated ERP Solution | Analytix BSS",
+  title: "AI Integrated ERP Solution | Analytix BSS",
   description:
     "An intelligent ERP environment designed to connect core business operations, automate repetitive workflows and turn business data into actionable insights.",
 };

@@ -12,8 +12,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/odoo-erp",
     "/ai-automation",
     "/aramco-compliance",
-    "/blog",
-    "/contact",
+    "/products",
+    "/products/ai-integrated-erp",
+    "/products/ai-integrated-360-odoo",
+    "/services",
+    "/services/ai-process-automation",
+    "/services/cyber-security",
+    "/services/erp-implementation",
+    "/services/digital-branding",
   ];
 
   return routes.map((route) => ({

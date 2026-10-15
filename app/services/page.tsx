@@ -6,19 +6,20 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import InnerCTABand from "@/components/InnerCTABand";
-import { Bot, Shield, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Bot, Shield, Boxes, Palette, ArrowRight, CheckCircle2 } from "lucide-react";
 import { SUPPORTING_SERVICES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "AI-Powered Services & Capabilities | Analytix BSS",
   description:
-    "Explore our specialized capability squads: AI Process Automation, Cyber Security, and AI-Based Marketing, engineered to support your enterprise digital backbone.",
+    "Explore our specialized capability squads: AI Process Automation, Cyber Security, ERP Implementation, and Digital Branding, engineered to support your enterprise digital backbone.",
 };
 
 const ICON_MAP: Record<string, any> = {
   Bot,
   Shield,
-  TrendingUp,
+  Boxes,
+  Palette,
 };
 
 export default function ServicesPage() {
@@ -42,7 +43,7 @@ export default function ServicesPage() {
             description="Our services do not exist in isolation. They are designed to integrate seamlessly into your AI ERP and operational ecosystem."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {SUPPORTING_SERVICES.map((srv, idx) => {
               const Icon = ICON_MAP[srv.iconName] || Bot;
               return (
