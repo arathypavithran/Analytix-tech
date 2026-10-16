@@ -44,11 +44,11 @@ export default function HomePage() {
       {/* =====================================================================
           1. HERO: PRODUCT-LED HERO STAGE WITH AI BUSINESS CORE
           ===================================================================== */}
-      <section className="relative min-h-[92vh] flex flex-col justify-start pt-6 sm:pt-10 pb-16 sm:pb-24 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-5.5rem)] flex flex-col justify-center pt-2 sm:pt-4 pb-12 sm:pb-16 overflow-hidden">
         {/* Cinematic Electric-Blue Lighting Flare & Light Rays matching Reference Image */}
         <HeroLightingFlare />
 
-        <div className="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-10 mx-auto max-w-[1720px] 2xl:max-w-[1800px] px-4 sm:px-6 lg:px-10 xl:px-14 w-full flex-1 flex flex-col justify-center">
           <HeroProductStage />
         </div>
       </section>

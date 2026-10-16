@@ -323,3 +323,78 @@ html.lenis, html.lenis body {
   perspective: 1200px;
 }
 
+/* =====================================================================
+   HERO CINEMATIC ANIMATION SUITE
+   ===================================================================== */
+
+/* Shimmer sweep effect for CTA */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-200%) skewX(-20deg); }
+  60%, 100% { transform: translateX(400%) skewX(-20deg); }
+}
+.animate-shimmer { animation: shimmerSweep 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+/* Orbit comet animation */
+@keyframes orbitGlow {
+  0% { stroke-dashoffset: 1200; }
+  100% { stroke-dashoffset: 0; }
+}
+.animate-orbit-comet {
+  stroke-dasharray: 180 1020;
+  animation: orbitGlow 10s linear infinite;
+}
+
+/* Animated gradient text flow */
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-text {
+  background-size: 300% 300%;
+  animation: gradientFlow 5s ease infinite;
+}
+
+/* Floating drift for cards */
+@keyframes floatUp { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+@keyframes floatDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(14px)} }
+.animate-float-up   { animation: floatUp   6s ease-in-out infinite; }
+.animate-float-down { animation: floatDown 6.5s ease-in-out infinite; }
+
+/* Neon border pulse */
+@keyframes neonPulse {
+  0%,100% { box-shadow: 0 0 20px rgba(56,189,248,0.3), 0 0 50px rgba(56,189,248,0.15); }
+  50%      { box-shadow: 0 0 35px rgba(56,189,248,0.65), 0 0 80px rgba(56,189,248,0.3); }
+}
+.animate-neon-pulse-blue { animation: neonPulse 3s ease-in-out infinite; }
+
+@keyframes neonPulsePurple {
+  0%,100% { box-shadow: 0 0 20px rgba(192,132,252,0.3), 0 0 50px rgba(192,132,252,0.15); }
+  50%      { box-shadow: 0 0 35px rgba(192,132,252,0.65), 0 0 80px rgba(192,132,252,0.3); }
+}
+.animate-neon-pulse-purple { animation: neonPulsePurple 3.5s ease-in-out infinite; }
+
+/* Aurora wave motion for background blobs */
+@keyframes auroraShift {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  33%  { transform: translate(5%, -8%) scale(1.1); }
+  66%  { transform: translate(-6%, 5%) scale(0.95); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+.animate-aurora { animation: auroraShift 14s ease-in-out infinite; }
+.animate-aurora-delay { animation: auroraShift 18s ease-in-out infinite reverse; }
+
+/* Vertical scan line sweep */
+@keyframes scanLine {
+  0%   { opacity: 0; top: -2%; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { opacity: 0; top: 102%; }
+}
+.animate-scan-line { animation: scanLine 6s linear infinite; }
+
+/* Subtle stat counter spin-in */
+@keyframes countIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.animate-count-in { animation: countIn 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+
+

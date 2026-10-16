@@ -86,7 +86,7 @@ export default function RootLayout({
           <ProgressBar />
           <CursorGlow />
           <Navbar />
-          <main className="relative z-10 flex min-h-screen flex-col pt-24 sm:pt-28">
+          <main className="relative z-10 flex min-h-screen flex-col pt-20 sm:pt-24">
             {children}
           </main>
           <Footer />
